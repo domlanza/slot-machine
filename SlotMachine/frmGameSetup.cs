@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SlotMachine
 {
-    public partial class Form1 : Form
+    public partial class frmGameSetup : Form
     {
-        public Form1()
+        public frmGameSetup()
         {
             InitializeComponent();
         }

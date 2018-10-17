@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SlotMachine
+namespace SlotMachine.Forms
 {
-    public partial class frmGameSetup : Form
+    public partial class frmGameEntry : Form
     {
-        public frmGameSetup()
+        public frmGameEntry()
         {
             InitializeComponent();
         }

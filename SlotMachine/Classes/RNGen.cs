@@ -9,8 +9,8 @@ namespace SlotMachine.Classes
     class RNGen
     {
         private int[] pictureNum = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        int result;
-        Random gen;
+        private int result;
+        private Random gen;
 
         public RNGen()
         {

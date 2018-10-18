@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Temple University / CIS 3309 / Slot Machine
+ * Class: Player 
+ * Author: Zachary Goncalves
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

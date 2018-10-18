@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Player.cs" />
+    <Compile Include="Classes\RNGen.cs" />
     <Compile Include="Forms\frmGameEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +62,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmGameEntry.resx">
+      <DependentUpon>frmGameEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSlots.resx">
       <DependentUpon>frmSlots.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,8 +90,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

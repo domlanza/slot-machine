@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\RNGen.cs" />
+    <Compile Include="Forms\frmGameEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGameEnd.Designer.cs">
+      <DependentUpon>frmGameEnd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmGameEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmGameEnd.resx">
+      <DependentUpon>frmGameEnd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmGameEntry.resx">
       <DependentUpon>frmGameEntry.cs</DependentUpon>
     </EmbeddedResource>

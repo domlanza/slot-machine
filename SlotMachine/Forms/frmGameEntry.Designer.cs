@@ -31,10 +31,9 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.btnEnterName = new System.Windows.Forms.Button();
             this.btnEnterGame = new System.Windows.Forms.Button();
             this.lblInstructions = new System.Windows.Forms.Label();
-            this.btnEnterMoney = new System.Windows.Forms.Button();
+            this.btnReady = new System.Windows.Forms.Button();
             this.txtMoney = new System.Windows.Forms.TextBox();
             this.lblEnterMoney = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -66,16 +65,6 @@
             this.txtName.Size = new System.Drawing.Size(140, 26);
             this.txtName.TabIndex = 2;
             // 
-            // btnEnterName
-            // 
-            this.btnEnterName.Location = new System.Drawing.Point(633, 137);
-            this.btnEnterName.Name = "btnEnterName";
-            this.btnEnterName.Size = new System.Drawing.Size(84, 29);
-            this.btnEnterName.TabIndex = 3;
-            this.btnEnterName.Text = "OK";
-            this.btnEnterName.UseVisualStyleBackColor = true;
-            this.btnEnterName.Click += new System.EventHandler(this.btnEnterName_Click);
-            // 
             // btnEnterGame
             // 
             this.btnEnterGame.Enabled = false;
@@ -90,21 +79,21 @@
             // lblInstructions
             // 
             this.lblInstructions.AutoSize = true;
-            this.lblInstructions.Location = new System.Drawing.Point(177, 277);
+            this.lblInstructions.Location = new System.Drawing.Point(178, 297);
             this.lblInstructions.Name = "lblInstructions";
             this.lblInstructions.Size = new System.Drawing.Size(238, 20);
             this.lblInstructions.TabIndex = 5;
             this.lblInstructions.Text = "Instructions and tips will go here!";
             // 
-            // btnEnterMoney
+            // btnReady
             // 
-            this.btnEnterMoney.Location = new System.Drawing.Point(633, 186);
-            this.btnEnterMoney.Name = "btnEnterMoney";
-            this.btnEnterMoney.Size = new System.Drawing.Size(84, 29);
-            this.btnEnterMoney.TabIndex = 8;
-            this.btnEnterMoney.Text = "OK";
-            this.btnEnterMoney.UseVisualStyleBackColor = true;
-            this.btnEnterMoney.Click += new System.EventHandler(this.btnEnterMoney_Click);
+            this.btnReady.Location = new System.Drawing.Point(465, 227);
+            this.btnReady.Name = "btnReady";
+            this.btnReady.Size = new System.Drawing.Size(99, 37);
+            this.btnReady.TabIndex = 8;
+            this.btnReady.Text = "Ready";
+            this.btnReady.UseVisualStyleBackColor = true;
+            this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
             // 
             // txtMoney
             // 
@@ -128,12 +117,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 608);
-            this.Controls.Add(this.btnEnterMoney);
+            this.Controls.Add(this.btnReady);
             this.Controls.Add(this.txtMoney);
             this.Controls.Add(this.lblEnterMoney);
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.btnEnterGame);
-            this.Controls.Add(this.btnEnterName);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblWelcome);
@@ -152,10 +140,9 @@
 		private System.Windows.Forms.Label lblWelcome;
 		private System.Windows.Forms.Label lblName;
 		private System.Windows.Forms.TextBox txtName;
-		private System.Windows.Forms.Button btnEnterName;
         private System.Windows.Forms.Button btnEnterGame;
         private System.Windows.Forms.Label lblInstructions;
-        private System.Windows.Forms.Button btnEnterMoney;
+        private System.Windows.Forms.Button btnReady;
         private System.Windows.Forms.TextBox txtMoney;
         private System.Windows.Forms.Label lblEnterMoney;
     }

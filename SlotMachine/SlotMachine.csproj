@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\GlobalData.cs" />
+    <Compile Include="Classes\InternalSlots.cs" />
+    <Compile Include="Classes\LookupTable.cs" />
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\RNGen.cs" />
+    <Compile Include="Classes\Scoreboard.cs" />
     <Compile Include="Forms\frmGameEnd.cs">
       <SubType>Form</SubType>
     </Compile>

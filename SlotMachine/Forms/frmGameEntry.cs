@@ -21,7 +21,7 @@ namespace SlotMachine.Forms
             InitializeComponent();
         }
 
-        private void btnEnterName_Click(object sender, EventArgs e)
+        private void btnReady_Click(object sender, EventArgs e)
         {
             try
             {
@@ -32,10 +32,6 @@ namespace SlotMachine.Forms
                     txtName.Text = "";
                     txtName.Focus();
                 }
-                else
-                {
-                    btnEnterGame.Enabled = true;
-                }
             }
             catch
             {
@@ -43,13 +39,11 @@ namespace SlotMachine.Forms
                 txtName.Text = "";
                 txtName.Focus();
             }
-        }
 
-        private void btnEnterMoney_Click(object sender, EventArgs e)
-        {
             try
             {
                 startingBalance = Convert.ToInt32(txtMoney.Text);
+                btnEnterGame.Enabled = true;
             }
             catch
             {
@@ -57,6 +51,8 @@ namespace SlotMachine.Forms
                 txtMoney.Text = "";
                 txtMoney.Focus();
             }
+
+            btnEnterGame.Enabled = true;
         }
 
         private void btnEnterGame_Click(object sender, EventArgs e)

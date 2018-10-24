@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 608);
+            this.ClientSize = new System.Drawing.Size(936, 576);
             this.Controls.Add(this.btnReady);
             this.Controls.Add(this.txtMoney);
             this.Controls.Add(this.lblEnterMoney);

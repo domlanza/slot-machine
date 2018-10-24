@@ -8,7 +8,7 @@ namespace SlotMachine.Classes
 {
 	class GlobalData
 	{
-		public RNGen RNGOne = new RNGen();
+		public static RNGen RNGOne = new RNGen();
         public RNGen RNGTwo = new RNGen();
         public RNGen RNGThree = new RNGen();
         public Player player;

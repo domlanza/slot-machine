@@ -25,8 +25,8 @@ namespace SlotMachine.Forms
         {
             try
             {
-                string name = txtName.Text;
-                if (string.IsNullOrEmpty(name))
+                playerName = txtName.Text;
+                if (string.IsNullOrEmpty(playerName))
                 {
                     MessageBox.Show("Please enter a valid name.", "Error");
                     txtName.Text = "";
@@ -53,6 +53,7 @@ namespace SlotMachine.Forms
             }
 
             btnEnterGame.Enabled = true;
+            RNGTester();
         }
 
         private void btnEnterGame_Click(object sender, EventArgs e)
@@ -61,6 +62,15 @@ namespace SlotMachine.Forms
             Form frmSlots = new frmSlots();
             frmSlots.Show();
         }
+        // TO BE REMOVED: TESTS RANDOM NUMBER GENERATOR
+        public void RNGTester()
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                string generatedNum = GlobalData.RNGOne.pickRandomNumber().ToString();
+                MessageBox.Show(generatedNum);
+            }
 
-    }
+        }
+    }   
 }

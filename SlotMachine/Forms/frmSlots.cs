@@ -16,5 +16,9 @@ namespace SlotMachine.Forms
         {
             InitializeComponent();
         }
-    }
+
+		private void btnSpin_Click(object sender, EventArgs e)
+		{
+		}
+	}
 }

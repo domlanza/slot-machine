@@ -19,9 +19,13 @@ namespace SlotMachine.Classes
 		//third random number
 		private int Three;
 
-		//accepts 3 integer parameters and returns correct score
+		//default constructor
+		public InternalSlots()
+		{
+		}
+
 		//we can actually drop the parameters here, and call spinReel within this method
-        public int getReelResult()
+		public int getReelResult()
         {
 			//call for random numbers
 			spinReel();

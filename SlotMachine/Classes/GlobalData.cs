@@ -9,7 +9,8 @@ namespace SlotMachine.Classes
 	class GlobalData
 	{
 		public static RNGen RNG = new RNGen();
-        public Player player;
+		public InternalSlots internalfrm = new InternalSlots();
+		public Player player;
 
 	}
 }

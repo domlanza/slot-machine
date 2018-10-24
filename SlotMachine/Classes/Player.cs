@@ -14,12 +14,13 @@ namespace SlotMachine.Classes
     class Player
     {
         private string playerName;
-        private int numCoins = 15;
         private int winnings = 0;
+        private int playerBalance = 0;
 
-        public Player(string name)
+        public Player(string name, int balance)
         {
-            playerName = name; 
+            playerName = name;
+            playerBalance = balance;
         }
 
         public string getPlayerName()
@@ -27,31 +28,15 @@ namespace SlotMachine.Classes
             return playerName;
         }
 
-        public int removeCoins(int coinCount)
+
+        public int addToWinnings(int amountWon)
         {
-            return numCoins - coinCount; 
+            return winnings += amountWon;
         }
 
-        public int addCoints(int coinCount)
+        public int removeFromWinnings(int amountLost)
         {
-            return numCoins + coinCount; 
-        }
-
-        public int addToWinnings(int coinCount)
-        {
-            return winnings + coinCount;
-        }
-
-        public int removeFromWinnings(int coinCount)
-        {
-            int updatedWinnings = winnings - coinCount;
-            if(updatedWinnings < 0)
-            {
-                return winnings = 0;
-            } else
-            {
-                return winnings;
-            }
+            return winnings -= amountLost;
         }
 
         public int getWinnings()

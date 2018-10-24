@@ -13,6 +13,9 @@ namespace SlotMachine.Forms
 {
     public partial class frmGameEntry : Form
     {
+        private string playerName;
+        private int startingBalance = 0;
+
         public frmGameEntry()
         {
             InitializeComponent();
@@ -31,7 +34,6 @@ namespace SlotMachine.Forms
                 }
                 else
                 {
-                    Player player = new Player(name);
                     btnEnterGame.Enabled = true;
                 }
             }
@@ -43,10 +45,26 @@ namespace SlotMachine.Forms
             }
         }
 
+        private void btnEnterMoney_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                startingBalance = Convert.ToInt32(txtMoney.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid amount of money", "Error");
+                txtMoney.Text = "";
+                txtMoney.Focus();
+            }
+        }
+
         private void btnEnterGame_Click(object sender, EventArgs e)
         {
+            Player player = new Player(playerName, startingBalance);
             Form frmSlots = new frmSlots();
             frmSlots.Show();
         }
+
     }
 }

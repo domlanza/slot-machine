@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlotMachine.Classes;
 
-namespace SlotMachine.Classes
+namespace SlotMachine
 {
-	class GlobalData
+	public class GlobalData
 	{
 		public static RNGen RNG = new RNGen();
-		public InternalSlots internalfrm = new InternalSlots();
+		public static InternalSlots internalfrm = new InternalSlots();
 		public Player player;
 
 	}
 }
+

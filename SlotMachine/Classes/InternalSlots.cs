@@ -6,22 +6,34 @@ using System.Threading.Tasks;
 
 namespace SlotMachine.Classes
 {
-    class InternalSlots
-    {
+	public class InternalSlots
+	{
 		//our slot machine quantity counter
 		private int[] reelResult = { 0, 0, 0, 0, 0 };
 		//number of coins bet this round
-        private int coinNum = 0;
+		private int coinNum = 0;
 		//first random number
 		private int One;
 		//second random number;
 		private int Two;
 		//third random number
 		private int Three;
+		private int max = 3;
 
 		//default constructor
 		public InternalSlots()
 		{
+		}
+		public void AddCoin(int num)
+		{
+			if (num == max)
+			{
+				coinNum = 3;
+			}
+			else
+			{
+				coinNum +=num;
+			}
 		}
 
 		//we can actually drop the parameters here, and call spinReel within this method

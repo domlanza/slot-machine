@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SlotMachine.Classes
 {
-    class Player
+    public class Player
     {
         private string playerName;
         private int winnings = 0;

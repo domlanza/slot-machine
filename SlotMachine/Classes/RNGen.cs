@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SlotMachine.Classes
 {
-    class RNGen
+    public class RNGen
     {
         private int[] pictureNum = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		private int[] valueNum = new int[] { 0, 1, 2, 3, 4 };

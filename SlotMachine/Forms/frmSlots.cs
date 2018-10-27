@@ -19,6 +19,17 @@ namespace SlotMachine.Forms
 
 		private void btnSpin_Click(object sender, EventArgs e)
 		{
+			GlobalData.internalfrm.spinReel();
+		}
+
+		private void btnAddCoin_Click(object sender, EventArgs e)
+		{
+			GlobalData.internalfrm.AddCoin(1);
+		}
+
+		private void btnMaxCoins_Click(object sender, EventArgs e)
+		{
+			GlobalData.internalfrm.AddCoin(3);
 		}
 	}
 }

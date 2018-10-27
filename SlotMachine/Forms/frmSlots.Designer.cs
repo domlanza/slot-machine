@@ -68,6 +68,7 @@
 			this.btnMaxCoins.TabIndex = 2;
 			this.btnMaxCoins.Text = "Add Max Coins";
 			this.btnMaxCoins.UseVisualStyleBackColor = true;
+			this.btnMaxCoins.Click += new System.EventHandler(this.btnMaxCoins_Click);
 			// 
 			// btnSpin
 			// 
@@ -89,6 +90,7 @@
 			this.btnAddCoin.TabIndex = 0;
 			this.btnAddCoin.Text = "Add Coin";
 			this.btnAddCoin.UseVisualStyleBackColor = true;
+			this.btnAddCoin.Click += new System.EventHandler(this.btnAddCoin_Click);
 			// 
 			// pbReel1
 			// 
@@ -186,7 +188,7 @@
 			// btnPayout
 			// 
 			this.btnPayout.Location = new System.Drawing.Point(1109, 592);
-			this.btnPayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnPayout.Margin = new System.Windows.Forms.Padding(4);
 			this.btnPayout.Name = "btnPayout";
 			this.btnPayout.Size = new System.Drawing.Size(119, 38);
 			this.btnPayout.TabIndex = 10;

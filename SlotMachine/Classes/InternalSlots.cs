@@ -171,11 +171,11 @@ namespace SlotMachine.Classes
 		//assigns random values to all three 'panels'
 		public void spinReel()
         {
-			int One = GlobalData.RNG.pickRandomValue();
-			int Two = GlobalData.RNG.pickRandomValue();
-            int Three = GlobalData.RNG.pickRandomValue();
-		}
-        
+			One = GlobalData.RNG.pickRandomValue();
+			Two = GlobalData.RNG.pickRandomValue();
+            Three = GlobalData.RNG.pickRandomValue();
+        }
+
         // rng test code  
         public int getSpinOne()
         {

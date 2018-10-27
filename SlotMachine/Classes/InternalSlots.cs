@@ -35,6 +35,14 @@ namespace SlotMachine.Classes
                 betNum += num;
 			}
 		}
+		public void ResetCoin()
+		{
+			betNum = 0;
+		}
+		public int GetCoins()
+		{
+			return betNum;
+		}
 
 		//we can actually drop the parameters here, and call spinReel within this method
 		public int getReelResult()

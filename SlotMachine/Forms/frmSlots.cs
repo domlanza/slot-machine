@@ -31,8 +31,8 @@ namespace SlotMachine.Forms
             score += GlobalData.internalfrm.getReelResult();
             if(winnings == 0)
             {
-                score -= GlobalData.internalfrm.getReelResult();
-                txtBalance.Text = score.ToString();
+				score -=  GlobalData.internalfrm.GetCoins();
+				txtBalance.Text = score.ToString();
             }
             else
             {

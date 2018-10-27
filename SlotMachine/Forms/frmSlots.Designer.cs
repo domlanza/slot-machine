@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.lblGameControls = new System.Windows.Forms.Panel();
-            this.btnMaxCoins = new System.Windows.Forms.Button();
+            this.btnMaxBet = new System.Windows.Forms.Button();
             this.btnSpin = new System.Windows.Forms.Button();
-            this.btnAddCoin = new System.Windows.Forms.Button();
+            this.btnPlaceBet = new System.Windows.Forms.Button();
             this.pbReel1 = new System.Windows.Forms.PictureBox();
             this.pbReel2 = new System.Windows.Forms.PictureBox();
             this.pbReel3 = new System.Windows.Forms.PictureBox();
-            this.txtScore = new System.Windows.Forms.TextBox();
-            this.lblScore = new System.Windows.Forms.Label();
+            this.txtBalance = new System.Windows.Forms.TextBox();
+            this.lblBalance = new System.Windows.Forms.Label();
             this.txtWinnings = new System.Windows.Forms.TextBox();
             this.lblWinnings = new System.Windows.Forms.Label();
-            this.lblCoinsToPlay = new System.Windows.Forms.Label();
-            this.txtCoinsToPlay = new System.Windows.Forms.TextBox();
+            this.lblBet = new System.Windows.Forms.Label();
+            this.txtBet = new System.Windows.Forms.TextBox();
             this.btnPayout = new System.Windows.Forms.Button();
             this.test1 = new System.Windows.Forms.Label();
             this.test2 = new System.Windows.Forms.Label();
@@ -53,28 +53,29 @@
             // 
             // lblGameControls
             // 
-            this.lblGameControls.Controls.Add(this.btnMaxCoins);
+            this.lblGameControls.Controls.Add(this.btnMaxBet);
             this.lblGameControls.Controls.Add(this.btnSpin);
-            this.lblGameControls.Controls.Add(this.btnAddCoin);
+            this.lblGameControls.Controls.Add(this.btnPlaceBet);
             this.lblGameControls.Location = new System.Drawing.Point(392, 599);
             this.lblGameControls.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblGameControls.Name = "lblGameControls";
             this.lblGameControls.Size = new System.Drawing.Size(660, 105);
             this.lblGameControls.TabIndex = 0;
             // 
-            // btnMaxCoins
+            // btnMaxBet
             // 
-            this.btnMaxCoins.Location = new System.Drawing.Point(219, 25);
-            this.btnMaxCoins.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMaxCoins.Name = "btnMaxCoins";
-            this.btnMaxCoins.Size = new System.Drawing.Size(170, 59);
-            this.btnMaxCoins.TabIndex = 2;
-            this.btnMaxCoins.Text = "Add Max Coins";
-            this.btnMaxCoins.UseVisualStyleBackColor = true;
-            this.btnMaxCoins.Click += new System.EventHandler(this.btnMaxCoins_Click);
+            this.btnMaxBet.Location = new System.Drawing.Point(219, 25);
+            this.btnMaxBet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaxBet.Name = "btnMaxBet";
+            this.btnMaxBet.Size = new System.Drawing.Size(170, 59);
+            this.btnMaxBet.TabIndex = 2;
+            this.btnMaxBet.Text = "Place Max Bet";
+            this.btnMaxBet.UseVisualStyleBackColor = true;
+            this.btnMaxBet.Click += new System.EventHandler(this.btnMaxCoins_Click);
             // 
             // btnSpin
             // 
+            this.btnSpin.Enabled = false;
             this.btnSpin.Location = new System.Drawing.Point(418, 25);
             this.btnSpin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSpin.Name = "btnSpin";
@@ -84,16 +85,16 @@
             this.btnSpin.UseVisualStyleBackColor = true;
             this.btnSpin.Click += new System.EventHandler(this.btnSpin_Click);
             // 
-            // btnAddCoin
+            // btnPlaceBet
             // 
-            this.btnAddCoin.Location = new System.Drawing.Point(17, 25);
-            this.btnAddCoin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddCoin.Name = "btnAddCoin";
-            this.btnAddCoin.Size = new System.Drawing.Size(170, 59);
-            this.btnAddCoin.TabIndex = 0;
-            this.btnAddCoin.Text = "Add Coin";
-            this.btnAddCoin.UseVisualStyleBackColor = true;
-            this.btnAddCoin.Click += new System.EventHandler(this.btnAddCoin_Click);
+            this.btnPlaceBet.Location = new System.Drawing.Point(17, 25);
+            this.btnPlaceBet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPlaceBet.Name = "btnPlaceBet";
+            this.btnPlaceBet.Size = new System.Drawing.Size(170, 59);
+            this.btnPlaceBet.TabIndex = 0;
+            this.btnPlaceBet.Text = "Place Bet";
+            this.btnPlaceBet.UseVisualStyleBackColor = true;
+            this.btnPlaceBet.Click += new System.EventHandler(this.btnAddCoin_Click);
             // 
             // pbReel1
             // 
@@ -122,26 +123,27 @@
             this.pbReel3.TabIndex = 3;
             this.pbReel3.TabStop = false;
             // 
-            // txtScore
+            // txtBalance
             // 
-            this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScore.Location = new System.Drawing.Point(582, 462);
-            this.txtScore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(307, 89);
-            this.txtScore.TabIndex = 4;
-            this.txtScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalance.Location = new System.Drawing.Point(681, 462);
+            this.txtBalance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBalance.Name = "txtBalance";
+            this.txtBalance.ReadOnly = true;
+            this.txtBalance.Size = new System.Drawing.Size(307, 89);
+            this.txtBalance.TabIndex = 4;
+            this.txtBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblScore
+            // lblBalance
             // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(459, 495);
-            this.lblScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(103, 29);
-            this.lblScore.TabIndex = 5;
-            this.lblScore.Text = "SCORE";
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalance.Location = new System.Drawing.Point(533, 495);
+            this.lblBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(130, 29);
+            this.lblBalance.TabIndex = 5;
+            this.lblBalance.Text = "BALANCE";
             // 
             // txtWinnings
             // 
@@ -149,7 +151,8 @@
             this.txtWinnings.Location = new System.Drawing.Point(284, 462);
             this.txtWinnings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtWinnings.Name = "txtWinnings";
-            this.txtWinnings.Size = new System.Drawing.Size(116, 89);
+            this.txtWinnings.ReadOnly = true;
+            this.txtWinnings.Size = new System.Drawing.Size(176, 89);
             this.txtWinnings.TabIndex = 6;
             this.txtWinnings.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -164,26 +167,27 @@
             this.lblWinnings.TabIndex = 7;
             this.lblWinnings.Text = "WINNINGS";
             // 
-            // lblCoinsToPlay
+            // lblBet
             // 
-            this.lblCoinsToPlay.AutoSize = true;
-            this.lblCoinsToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCoinsToPlay.Location = new System.Drawing.Point(944, 495);
-            this.lblCoinsToPlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCoinsToPlay.Name = "lblCoinsToPlay";
-            this.lblCoinsToPlay.Size = new System.Drawing.Size(209, 29);
-            this.lblCoinsToPlay.TabIndex = 9;
-            this.lblCoinsToPlay.Text = "COINS TO PLAY";
+            this.lblBet.AutoSize = true;
+            this.lblBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBet.Location = new System.Drawing.Point(1084, 495);
+            this.lblBet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBet.Name = "lblBet";
+            this.lblBet.Size = new System.Drawing.Size(64, 29);
+            this.lblBet.TabIndex = 9;
+            this.lblBet.Text = "BET";
             // 
-            // txtCoinsToPlay
+            // txtBet
             // 
-            this.txtCoinsToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCoinsToPlay.Location = new System.Drawing.Point(1164, 462);
-            this.txtCoinsToPlay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCoinsToPlay.Name = "txtCoinsToPlay";
-            this.txtCoinsToPlay.Size = new System.Drawing.Size(116, 89);
-            this.txtCoinsToPlay.TabIndex = 8;
-            this.txtCoinsToPlay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBet.Location = new System.Drawing.Point(1164, 462);
+            this.txtBet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBet.Name = "txtBet";
+            this.txtBet.ReadOnly = true;
+            this.txtBet.Size = new System.Drawing.Size(116, 89);
+            this.txtBet.TabIndex = 8;
+            this.txtBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnPayout
             // 
@@ -231,12 +235,12 @@
             this.Controls.Add(this.test2);
             this.Controls.Add(this.test1);
             this.Controls.Add(this.btnPayout);
-            this.Controls.Add(this.lblCoinsToPlay);
-            this.Controls.Add(this.txtCoinsToPlay);
+            this.Controls.Add(this.lblBet);
+            this.Controls.Add(this.txtBet);
             this.Controls.Add(this.lblWinnings);
             this.Controls.Add(this.txtWinnings);
-            this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.txtScore);
+            this.Controls.Add(this.lblBalance);
+            this.Controls.Add(this.txtBalance);
             this.Controls.Add(this.pbReel3);
             this.Controls.Add(this.pbReel2);
             this.Controls.Add(this.pbReel1);
@@ -259,18 +263,18 @@
         #endregion
 
         private System.Windows.Forms.Panel lblGameControls;
-        private System.Windows.Forms.Button btnMaxCoins;
+        private System.Windows.Forms.Button btnMaxBet;
         private System.Windows.Forms.Button btnSpin;
-        private System.Windows.Forms.Button btnAddCoin;
+        private System.Windows.Forms.Button btnPlaceBet;
         private System.Windows.Forms.PictureBox pbReel1;
         private System.Windows.Forms.PictureBox pbReel2;
         private System.Windows.Forms.PictureBox pbReel3;
-        private System.Windows.Forms.TextBox txtScore;
-        private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.TextBox txtBalance;
+        private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.TextBox txtWinnings;
         private System.Windows.Forms.Label lblWinnings;
-        private System.Windows.Forms.Label lblCoinsToPlay;
-        private System.Windows.Forms.TextBox txtCoinsToPlay;
+        private System.Windows.Forms.Label lblBet;
+        private System.Windows.Forms.TextBox txtBet;
         private System.Windows.Forms.Button btnPayout;
         private System.Windows.Forms.Label test1;
         private System.Windows.Forms.Label test2;

@@ -12,7 +12,10 @@ namespace SlotMachine.Forms
 {
     public partial class frmSlots : Form
     {
-        private int coinCounter = 0;
+        private int betCounter = 0;
+        private int winnings = 0;
+        private int score = 0;
+
         public frmSlots()
         {
             InitializeComponent();
@@ -20,41 +23,63 @@ namespace SlotMachine.Forms
 
 		private void btnSpin_Click(object sender, EventArgs e)
 		{
-			GlobalData.internalfrm.spinReel();
             test1.Text = GlobalData.internalfrm.getSpinOne().ToString();
             test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
             test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
+
+            winnings = GlobalData.internalfrm.getReelResult();
+            score += GlobalData.internalfrm.getReelResult();
+            if(winnings == 0)
+            {
+                score -= GlobalData.internalfrm.getReelResult();
+                txtBalance.Text = score.ToString();
+            }
+            else
+            {
+                txtBalance.Text = score.ToString();
+            }
+            txtWinnings.Text = winnings.ToString();
+            txtBet.Text = "";
+            betCounter = 0;
+            btnPlaceBet.Enabled = true;
+            btnMaxBet.Enabled = true;
+            btnSpin.Enabled = false;
 		}
 
 		private void btnAddCoin_Click(object sender, EventArgs e)
 		{
-            coinCounter += 1;
-            if(coinCounter <= 3)
+            betCounter += 1;
+            if(betCounter <= 3)
             {
-                txtCoinsToPlay.Text = coinCounter.ToString();
+                txtBet.Text = betCounter.ToString();
                 GlobalData.internalfrm.AddCoin(1);
             }
-            else if(coinCounter > 3)
+            else if(betCounter > 3)
             {
                 MessageBox.Show("You cannot bet more than three coins.", "Error");
-                coinCounter = 3;
-                txtCoinsToPlay.Text = coinCounter.ToString();
+                betCounter = 3;
+                txtBet.Text = betCounter.ToString();
             }
-            if(coinCounter == 3)
+            if(betCounter == 3)
             {
-                btnAddCoin.Enabled = false;
-                btnMaxCoins.Enabled = false;
+                btnPlaceBet.Enabled = false;
+                btnMaxBet.Enabled = false;
             }
-            
+            if(betCounter != 0)
+            {
+                btnSpin.Enabled = true;
+            }
+
         }
 
 		private void btnMaxCoins_Click(object sender, EventArgs e)
 		{
 			GlobalData.internalfrm.AddCoin(3);
-            coinCounter = 3; 
-            txtCoinsToPlay.Text = coinCounter.ToString();
-            btnAddCoin.Enabled = false;
-            btnMaxCoins.Enabled = false;
+            betCounter = 3; 
+            txtBet.Text = betCounter.ToString();
+            btnPlaceBet.Enabled = false;
+            btnMaxBet.Enabled = false;
+            btnSpin.Enabled = true;
 		}
 	}
 }

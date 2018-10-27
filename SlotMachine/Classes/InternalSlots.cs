@@ -11,7 +11,7 @@ namespace SlotMachine.Classes
 		//our slot machine quantity counter
 		private int[] reelResult = { 0, 0, 0, 0, 0 };
 		//number of coins bet this round
-		private int coinNum = 0;
+		private int betNum = 0;
 		//first random number
 		private int One;
 		//second random number;
@@ -28,11 +28,11 @@ namespace SlotMachine.Classes
 		{
 			if (num == max)
 			{
-				coinNum = 3;
+                betNum = 3;
 			}
 			else
 			{
-				coinNum +=num;
+                betNum += num;
 			}
 		}
 
@@ -49,22 +49,22 @@ namespace SlotMachine.Classes
 			//three red T's
 			if (reelResult[0] == 3)
 			{
-				if (coinNum == 3)
+				if (betNum == 3)
 					return 600;
-				if (coinNum <= 2)
+				if (betNum <= 2)
 					return 400;
-				if (coinNum == 1)
+				if (betNum == 1)
 					return 200;
 				
 			}
 			//three blue T's
 			else if (reelResult[1] == 3)
 			{
-				if (coinNum == 3)
+				if (betNum == 3)
 					return 300;
-				if (coinNum == 2)
+				if (betNum == 2)
 					return 200;
-				if (coinNum == 1)
+				if (betNum == 1)
 					return 100;
 				
 				
@@ -72,11 +72,11 @@ namespace SlotMachine.Classes
 			//three green T's
 			else if (reelResult[2] == 3)
 			{
-				if (coinNum == 3)
+				if (betNum == 3)
 					return 180;
-				if (coinNum == 2)
+				if (betNum == 2)
 					return 120;
-				if (coinNum == 1)
+				if (betNum == 1)
 					return 60;
 				
 				
@@ -84,11 +84,11 @@ namespace SlotMachine.Classes
 			//3 stella owls
 			else if (reelResult[3] == 3)
 			{
-				if (coinNum == 3)
+				if (betNum == 3)
 					return 150;
-				if (coinNum == 2)
+				if (betNum == 2)
 					return 100;
-				if (coinNum == 1)
+				if (betNum == 1)
 					return 50;
 				
 				
@@ -96,22 +96,22 @@ namespace SlotMachine.Classes
 			//3 drawn owls
 			else if (reelResult[4] == 3)
 			{
-				if (coinNum == 3)
+				if (betNum == 3)
 					return 90;
-				if (coinNum == 2)
+				if (betNum == 2)
 					return 60;
-				if (coinNum == 1)
+				if (betNum == 1)
 					return 30;				
 			}
 			//Other Combinations
 			//Any three temple T's
 			else if (reelResult[0] + reelResult[1] + reelResult[2] == 3)
 			{
-				if (coinNum == 3)
+				if (betNum == 3)
 					return 225;
-				if (coinNum == 2)
+				if (betNum == 2)
 					return 150;
-				if (coinNum == 1)
+				if (betNum == 1)
 					return 75;
 				
 				
@@ -119,11 +119,11 @@ namespace SlotMachine.Classes
 			//Any 3 owls
 			else if (reelResult[3] + reelResult[4] == 3)
 			{
-				if (coinNum == 3)
+				if (betNum == 3)
 					return 30;
-				if (coinNum == 2)
+				if (betNum == 2)
 					return 20;
-				if (coinNum == 1)
+				if (betNum == 1)
 					return 10;
 				
 				
@@ -136,11 +136,11 @@ namespace SlotMachine.Classes
 					if (reelResult[i] == 2)
 					{
 						{
-							if (coinNum == 3)
+							if (betNum == 3)
 								return 15;
-							if (coinNum == 2)
+							if (betNum == 2)
 								return 10;
-							if (coinNum == 1)
+							if (betNum == 1)
 								return 5;			
 						}
 					}
@@ -150,11 +150,11 @@ namespace SlotMachine.Classes
 			else if (reelResult[0] == 1)
 			{
 				{
-					if (coinNum == 3)
+					if (betNum == 3)
 						return 6;
-					if (coinNum == 2)
+					if (betNum == 2)
 						return 4;
-					if (coinNum == 1)
+					if (betNum == 1)
 						return 2;					
 				}
 			}

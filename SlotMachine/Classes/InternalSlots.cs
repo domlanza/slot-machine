@@ -173,8 +173,21 @@ namespace SlotMachine.Classes
         {
 			int One = GlobalData.RNG.pickRandomValue();
 			int Two = GlobalData.RNG.pickRandomValue();
-			int Three = GlobalData.RNG.pickRandomValue();
+            int Three = GlobalData.RNG.pickRandomValue();
 		}
-
+        
+        // rng test code  
+        public int getSpinOne()
+        {
+            return One;
+        }
+        public int getSpinTwo()
+        {
+            return Two;
+        }
+        public int getSpinThree()
+        {
+            return Three;
+        }
     }
 }

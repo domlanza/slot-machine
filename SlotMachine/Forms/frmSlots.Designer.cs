@@ -198,6 +198,7 @@
             this.btnPayout.TabIndex = 10;
             this.btnPayout.Text = "Pay out";
             this.btnPayout.UseVisualStyleBackColor = true;
+            this.btnPayout.Click += new System.EventHandler(this.btnPayout_Click);
             // 
             // test1
             // 

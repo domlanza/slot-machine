@@ -16,5 +16,10 @@ namespace SlotMachine.Forms
         {
             InitializeComponent();
         }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

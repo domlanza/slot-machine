@@ -81,5 +81,11 @@ namespace SlotMachine.Forms
             btnMaxBet.Enabled = false;
             btnSpin.Enabled = true;
 		}
-	}
+
+        private void btnPayout_Click(object sender, EventArgs e)
+        {
+            Form frmGameEnd = new frmGameEnd();
+            frmGameEnd.Show();
+        }
+    }
 }

@@ -21,5 +21,10 @@ namespace SlotMachine.Forms
         {
             Application.Exit();
         }
-    }
+
+		private void frmGameEnd_Load(object sender, EventArgs e)
+		{
+			lblWinnings.Text="$"+GlobalData.player.getScore().ToString();
+		}
+	}
 }

@@ -93,6 +93,9 @@ namespace SlotMachine.Forms
 
         private void btnPayout_Click(object sender, EventArgs e)
         {
+			//set player score at end of game
+			GlobalData.player.setScore(score);
+
             Form frmGameEnd = new frmGameEnd();
             frmGameEnd.Show();
         }

@@ -14,7 +14,7 @@ namespace SlotMachine.Classes
     public class Player
     {
         private string playerName;
-        private int winnings = 0;
+        private int score = 0;
         private int playerBalance=0;
 
         public void setPlayer(string name, int balance)
@@ -29,19 +29,14 @@ namespace SlotMachine.Classes
         }
 
 
-        public int addToWinnings(int amountWon)
-        {
-            return winnings += amountWon;
-        }
+		public void setScore(int scoreInput)
+		{
+			score = scoreInput;
+		}
 
-        public int removeFromWinnings(int amountLost)
+        public int getScore()
         {
-            return winnings -= amountLost;
-        }
-
-        public int getWinnings()
-        {
-            return winnings;
+            return score;
         }
 
     }

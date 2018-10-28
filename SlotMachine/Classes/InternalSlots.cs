@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace SlotMachine.Classes
 {
@@ -62,8 +63,14 @@ namespace SlotMachine.Classes
         //we can actually drop the parameters here, and call spinReel within this method
         public int getReelResult()
         {
-            //call for random numbers
-            spinReel();
+			//call for random numbers
+			Stopwatch timer = new Stopwatch();
+			timer.Start();
+
+			while (timer.Elapsed < TimeSpan.FromSeconds(5))
+			{
+				spinReel();
+			}
 
             reelResult[One]++;
             reelResult[Two]++;

@@ -44,7 +44,9 @@ namespace SlotMachine.Forms
             btnPlaceBet.Enabled = true;
             btnMaxBet.Enabled = true;
             btnSpin.Enabled = false;
-        }
+
+			GlobalData.internalfrm.ResetCoin();
+		}
 
         private void getPicture(int generatedIndex)
         {
@@ -65,7 +67,8 @@ namespace SlotMachine.Forms
                 MessageBox.Show("You cannot bet more than three coins.", "Error");
                 betCounter = 3;
                 txtBet.Text = betCounter.ToString();
-            }
+
+			}
             if(betCounter == 3)
             {
                 btnPlaceBet.Enabled = false;

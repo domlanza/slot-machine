@@ -11,7 +11,7 @@ namespace SlotMachine
 	{
 		public static RNGen RNG = new RNGen();
 		public static InternalSlots internalfrm = new InternalSlots();
-		public Player player;
+		public static Player player = new Player();
 
 	}
 }

@@ -53,25 +53,12 @@ namespace SlotMachine.Forms
             }
 
             btnEnterGame.Enabled = true;
-            //RNGTester();
         }
-
         private void btnEnterGame_Click(object sender, EventArgs e)
         {
-            Player player = new Player(playerName, startingBalance);
+			GlobalData.player.setPlayer(txtName.Text, Int32.Parse(txtMoney.Text));
             Form frmSlots = new frmSlots();
             frmSlots.Show();
         }
-
-		// TO BE REMOVED: TESTS RANDOM NUMBER GENERATOR
-		//public void RNGTester()
-		//{
-		//    for(int i = 0; i < 10; i++)
-		//    {
-		//        string generatedNum = GlobalData.RNG.pickRandomNumber().ToString();
-		//        MessageBox.Show(generatedNum);
-		//    }
-
-		//}
 	}   
 }

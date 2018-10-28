@@ -15,9 +15,9 @@ namespace SlotMachine.Classes
     {
         private string playerName;
         private int winnings = 0;
-        private int playerBalance = 0;
+        private int playerBalance=0;
 
-        public Player(string name, int balance)
+        public void setPlayer(string name, int balance)
         {
             playerName = name;
             playerBalance = balance;

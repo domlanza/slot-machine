@@ -21,8 +21,8 @@ namespace SlotMachine.Forms
             InitializeComponent();
         }
 
-		private void btnSpin_Click(object sender, EventArgs e)
-		{
+        private void btnSpin_Click(object sender, EventArgs e)
+        {
             test1.Text = GlobalData.internalfrm.getSpinOne().ToString();
             test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
             test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
@@ -31,8 +31,8 @@ namespace SlotMachine.Forms
             score += GlobalData.internalfrm.getReelResult();
             if(winnings == 0)
             {
-				score -=  GlobalData.internalfrm.GetCoins();
-				txtBalance.Text = score.ToString();
+                score -=  GlobalData.internalfrm.GetCoins();
+                txtBalance.Text = score.ToString();
             }
             else
             {
@@ -44,10 +44,16 @@ namespace SlotMachine.Forms
             btnPlaceBet.Enabled = true;
             btnMaxBet.Enabled = true;
             btnSpin.Enabled = false;
-		}
+        }
 
-		private void btnAddCoin_Click(object sender, EventArgs e)
-		{
+        private void getPicture(int generatedIndex)
+        {
+            GlobalData.internalfrm.AddPictures();
+            pbReel1.ImageLocation = GlobalData.internalfrm.LoadPicture(generatedIndex);
+        }
+
+        private void btnAddCoin_Click(object sender, EventArgs e)
+        {
             betCounter += 1;
             if(betCounter <= 3)
             {
@@ -72,15 +78,15 @@ namespace SlotMachine.Forms
 
         }
 
-		private void btnMaxCoins_Click(object sender, EventArgs e)
-		{
-			GlobalData.internalfrm.AddCoin(3);
+        private void btnMaxCoins_Click(object sender, EventArgs e)
+        {
+            GlobalData.internalfrm.AddCoin(3);
             betCounter = 3; 
             txtBet.Text = betCounter.ToString();
             btnPlaceBet.Enabled = false;
             btnMaxBet.Enabled = false;
             btnSpin.Enabled = true;
-		}
+        }
 
         private void btnPayout_Click(object sender, EventArgs e)
         {

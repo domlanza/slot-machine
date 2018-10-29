@@ -27,6 +27,10 @@ namespace SlotMachine.Forms
             test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
             test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
 
+            pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
+            pbReel2.Image = slotImages.Images[GlobalData.internalfrm.getSpinTwo()];
+            pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
+
             winnings = GlobalData.internalfrm.getReelResult();
             score += GlobalData.internalfrm.getReelResult();
             if(winnings == 0)
@@ -47,12 +51,6 @@ namespace SlotMachine.Forms
 
 			GlobalData.internalfrm.ResetCoin();
 		}
-
-        private void getPicture(int generatedIndex)
-        {
-            GlobalData.internalfrm.AddPictures();
-            pbReel1.ImageLocation = GlobalData.internalfrm.LoadPicture(generatedIndex);
-        }
 
         private void btnAddCoin_Click(object sender, EventArgs e)
         {

@@ -107,6 +107,7 @@
             this.pbReel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pbReel1.Name = "pbReel1";
             this.pbReel1.Size = new System.Drawing.Size(206, 241);
+            this.pbReel1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbReel1.TabIndex = 1;
             this.pbReel1.TabStop = false;
             // 
@@ -117,6 +118,7 @@
             this.pbReel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pbReel2.Name = "pbReel2";
             this.pbReel2.Size = new System.Drawing.Size(206, 241);
+            this.pbReel2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbReel2.TabIndex = 2;
             this.pbReel2.TabStop = false;
             // 
@@ -127,6 +129,7 @@
             this.pbReel3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pbReel3.Name = "pbReel3";
             this.pbReel3.Size = new System.Drawing.Size(206, 241);
+            this.pbReel3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbReel3.TabIndex = 3;
             this.pbReel3.TabStop = false;
             // 

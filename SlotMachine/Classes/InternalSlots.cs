@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace SlotMachine.Classes
 {
@@ -22,23 +23,6 @@ namespace SlotMachine.Classes
         //third random number
         private int Three;
         private int max = 3;
-
-        private List<string> pictureList = new List<string>();
-
-        public void AddPictures()
-        {
-            string imagesLocation = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Images\");
-            foreach (string ImageLocation in Directory.GetFiles(imagesLocation, ".png")) 
-            {
-                pictureList.Add(ImageLocation); 
-            }
-        }
-
-        public string LoadPicture(int index)
-        {
-            return pictureList[index];
-        }
-
 
         public void AddCoin(int num)
         {

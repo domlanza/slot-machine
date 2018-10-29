@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSlots));
             this.lblGameControls = new System.Windows.Forms.Panel();
             this.btnMaxBet = new System.Windows.Forms.Button();
             this.btnSpin = new System.Windows.Forms.Button();
@@ -45,6 +47,7 @@
             this.test1 = new System.Windows.Forms.Label();
             this.test2 = new System.Windows.Forms.Label();
             this.test3 = new System.Windows.Forms.Label();
+            this.slotImages = new System.Windows.Forms.ImageList(this.components);
             this.lblGameControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbReel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbReel2)).BeginInit();
@@ -242,6 +245,16 @@
             this.test3.TabIndex = 13;
             this.test3.Text = "Reel 3";
             // 
+            // slotImages
+            // 
+            this.slotImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("slotImages.ImageStream")));
+            this.slotImages.TransparentColor = System.Drawing.Color.Transparent;
+            this.slotImages.Images.SetKeyName(0, "red-t.png");
+            this.slotImages.Images.SetKeyName(1, "blue-t.png");
+            this.slotImages.Images.SetKeyName(2, "green-t.png");
+            this.slotImages.Images.SetKeyName(3, "drawn-owl.png");
+            this.slotImages.Images.SetKeyName(4, "stella-owl.png");
+            // 
             // frmSlots
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,5 +310,6 @@
         private System.Windows.Forms.Label test1;
         private System.Windows.Forms.Label test2;
         private System.Windows.Forms.Label test3;
+        private System.Windows.Forms.ImageList slotImages;
     }
 }

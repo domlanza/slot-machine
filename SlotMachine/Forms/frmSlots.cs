@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,13 +24,22 @@ namespace SlotMachine.Forms
 
         private void btnSpin_Click(object sender, EventArgs e)
         {
-            test1.Text = GlobalData.internalfrm.getSpinOne().ToString();
-            test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
-            test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
-
-            pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
-            pbReel2.Image = slotImages.Images[GlobalData.internalfrm.getSpinTwo()];
-            pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            while (timer.Elapsed < TimeSpan.FromSeconds(3))
+            {
+                GlobalData.internalfrm.spinReel();
+                test1.Text = GlobalData.internalfrm.getSpinOne().ToString();
+                test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
+                test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
+                pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
+                pbReel1.Refresh();
+                pbReel2.Image = slotImages.Images[GlobalData.internalfrm.getSpinTwo()];
+                pbReel2.Refresh();
+                pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
+                pbReel3.Refresh();
+            }
+            timer.Stop();
 
             winnings = GlobalData.internalfrm.getReelResult();
             score += GlobalData.internalfrm.getReelResult();

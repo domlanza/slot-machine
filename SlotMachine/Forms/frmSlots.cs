@@ -22,13 +22,15 @@ namespace SlotMachine.Forms
             InitializeComponent();
         }
 
-        private void btnSpin_Click(object sender, EventArgs e)
+
+		private void btnSpin_Click(object sender, EventArgs e)
         {
             Stopwatch timer = new Stopwatch();
             timer.Start();
             while (timer.Elapsed < TimeSpan.FromSeconds(3))
             {
-                GlobalData.internalfrm.spinReel();
+				Task.Delay(1000).Wait();
+				GlobalData.internalfrm.spinReel();
                 test1.Text = GlobalData.internalfrm.getSpinOne().ToString();
                 test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
                 test3.Text = GlobalData.internalfrm.getSpinThree().ToString();

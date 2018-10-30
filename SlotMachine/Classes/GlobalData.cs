@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using SlotMachine.Classes;
 
 namespace SlotMachine
@@ -12,7 +13,9 @@ namespace SlotMachine
 		public static RNGen RNG = new RNGen();
 		public static InternalSlots internalfrm = new InternalSlots();
 		public static Player player = new Player();
+        public static Form frmSlots = new Forms.frmSlots();
+        public static Form frmGameEnd = new Forms.frmGameEnd();
 
-	}
+    }
 }
 

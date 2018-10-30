@@ -35,15 +35,14 @@ namespace SlotMachine.Forms
                 test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
 
 				pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
-				Task.Delay(300).Wait();
 				pbReel1.Refresh();
 				pbReel2.Image = slotImages.Images[GlobalData.internalfrm.getSpinTwo()];
-				Task.Delay(300).Wait();
 				pbReel2.Refresh();
 				pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
-				Task.Delay(300).Wait();
 				pbReel3.Refresh();
-			}
+                Task.Delay(300).Wait();
+
+            }
             timer.Stop();
 
             winnings = GlobalData.internalfrm.getReelResult();
@@ -132,9 +131,8 @@ namespace SlotMachine.Forms
         {
 			//set player score at end of game
 			GlobalData.player.setScore(score);
-
-            Form frmGameEnd = new frmGameEnd();
-            frmGameEnd.Show();
+            GlobalData.frmSlots.Close();
+            GlobalData.frmGameEnd.Show();
         }
 
 		private void frmSlots_Load(object sender, EventArgs e)

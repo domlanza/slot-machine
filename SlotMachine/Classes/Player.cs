@@ -33,6 +33,10 @@ namespace SlotMachine.Classes
 		{
 			score = scoreInput;
 		}
+		public int getBalance()
+		{
+			return playerBalance;
+		}
 
         public int getScore()
         {

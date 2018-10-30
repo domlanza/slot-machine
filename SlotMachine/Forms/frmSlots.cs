@@ -15,7 +15,7 @@ namespace SlotMachine.Forms
     {
         private int betCounter = 0;
         private int winnings = 0;
-        private int score = 0;
+        private int score = GlobalData.player.getBalance();
 
         public frmSlots()
         {
@@ -109,5 +109,10 @@ namespace SlotMachine.Forms
             Form frmGameEnd = new frmGameEnd();
             frmGameEnd.Show();
         }
-    }
+
+		private void frmSlots_Load(object sender, EventArgs e)
+		{
+			txtBalance.Text = score.ToString();
+		}
+	}
 }

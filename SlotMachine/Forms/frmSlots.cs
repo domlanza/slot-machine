@@ -131,8 +131,9 @@ namespace SlotMachine.Forms
         {
 			//set player score at end of game
 			GlobalData.player.setScore(score);
-            GlobalData.frmSlots.Close();
-            GlobalData.frmGameEnd.Show();
+            this.Close();
+            Form frmGameEnd = new Forms.frmGameEnd();
+            frmGameEnd.Show();
         }
 
 		private void frmSlots_Load(object sender, EventArgs e)

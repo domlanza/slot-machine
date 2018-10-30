@@ -13,8 +13,6 @@ namespace SlotMachine
 		public static RNGen RNG = new RNGen();
 		public static InternalSlots internalfrm = new InternalSlots();
 		public static Player player = new Player();
-        public static Form frmSlots = new Forms.frmSlots();
-        public static Form frmGameEnd = new Forms.frmGameEnd();
 
     }
 }

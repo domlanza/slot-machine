@@ -57,7 +57,8 @@ namespace SlotMachine.Forms
         private void btnEnterGame_Click(object sender, EventArgs e)
         {
 			GlobalData.player.setPlayer(txtName.Text, Int32.Parse(txtMoney.Text));
-            GlobalData.frmSlots.Show();
+            Form frmSlots = new Forms.frmSlots();
+            frmSlots.Show();
         }
 	}   
 }

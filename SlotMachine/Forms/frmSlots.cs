@@ -27,33 +27,37 @@ namespace SlotMachine.Forms
         {
             Stopwatch timer = new Stopwatch();
             timer.Start();
-            while (timer.Elapsed < TimeSpan.FromSeconds(3))
+            while (timer.Elapsed < TimeSpan.FromSeconds(3.6))
             {
-				Task.Delay(1000).Wait();
 				GlobalData.internalfrm.spinReel();
                 test1.Text = GlobalData.internalfrm.getSpinOne().ToString();
                 test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
                 test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
-                pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
-                pbReel1.Refresh();
-                pbReel2.Image = slotImages.Images[GlobalData.internalfrm.getSpinTwo()];
-                pbReel2.Refresh();
-                pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
-                pbReel3.Refresh();
-            }
+
+				pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
+				Task.Delay(300).Wait();
+				pbReel1.Refresh();
+				pbReel2.Image = slotImages.Images[GlobalData.internalfrm.getSpinTwo()];
+				Task.Delay(300).Wait();
+				pbReel2.Refresh();
+				pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
+				Task.Delay(300).Wait();
+				pbReel3.Refresh();
+			}
             timer.Stop();
 
             winnings = GlobalData.internalfrm.getReelResult();
             score += GlobalData.internalfrm.getReelResult();
             if(winnings == 0)
             {
-                score -=  GlobalData.internalfrm.GetCoins();
+                score -=  betCounter;
                 txtBalance.Text = score.ToString();
             }
             else
             {
                 txtBalance.Text = score.ToString();
             }
+
             txtWinnings.Text = winnings.ToString();
             txtBet.Text = "";
             betCounter = 0;
@@ -61,44 +65,67 @@ namespace SlotMachine.Forms
             btnMaxBet.Enabled = true;
             btnSpin.Enabled = false;
 
+			//user lost all their money
+			if (score <= 0)
+			{
+				MessageBox.Show("You lose!");
+				//execute our btnPayout click event
+				btnPayout_Click(sender, e);
+			}
 			GlobalData.internalfrm.ResetCoin();
 		}
 
         private void btnAddCoin_Click(object sender, EventArgs e)
         {
-            betCounter += 1;
-            if(betCounter <= 3)
-            {
-                txtBet.Text = betCounter.ToString();
-                GlobalData.internalfrm.AddCoin(1);
-            }
-            else if(betCounter > 3)
-            {
-                MessageBox.Show("You cannot bet more than three coins.", "Error");
-                betCounter = 3;
-                txtBet.Text = betCounter.ToString();
-
+			betCounter += 1;
+			if (betCounter > score)
+			{
+				MessageBox.Show("You don't have enough to wager this amount!");
+				betCounter -= 1;
 			}
-            if(betCounter == 3)
-            {
-                btnPlaceBet.Enabled = false;
-                btnMaxBet.Enabled = false;
-            }
-            if(betCounter != 0)
-            {
-                btnSpin.Enabled = true;
-            }
+			else
+			{
+				if (betCounter <= 3)
+				{
+					txtBet.Text = betCounter.ToString();
+					GlobalData.internalfrm.AddCoin(1);
+				}
+				else if (betCounter > 3)
+				{
+					MessageBox.Show("You cannot bet more than three coins.", "Error");
+					betCounter = 3;
+					txtBet.Text = betCounter.ToString();
+
+				}
+				if (betCounter == 3)
+				{
+					btnPlaceBet.Enabled = false;
+					btnMaxBet.Enabled = false;
+				}
+				if (betCounter != 0)
+				{
+					btnSpin.Enabled = true;
+				}
+			}
 
         }
 
         private void btnMaxCoins_Click(object sender, EventArgs e)
         {
-            GlobalData.internalfrm.AddCoin(3);
-            betCounter = 3; 
-            txtBet.Text = betCounter.ToString();
-            btnPlaceBet.Enabled = false;
-            btnMaxBet.Enabled = false;
-            btnSpin.Enabled = true;
+			betCounter = 3;
+			if (betCounter > score)
+			{
+				MessageBox.Show("You don't have enough to wager this amount!");
+				betCounter = 0;
+			}
+			else
+			{
+				GlobalData.internalfrm.AddCoin(3);
+				txtBet.Text = betCounter.ToString();
+				btnPlaceBet.Enabled = false;
+				btnMaxBet.Enabled = false;
+				btnSpin.Enabled = true;
+			}
         }
 
         private void btnPayout_Click(object sender, EventArgs e)

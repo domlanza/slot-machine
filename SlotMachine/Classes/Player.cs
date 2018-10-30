@@ -20,7 +20,7 @@ namespace SlotMachine.Classes
         public void setPlayer(string name, int balance)
         {
             playerName = name;
-            playerBalance = balance;
+            playerBalance = Math.Abs(balance);
         }
 
         public string getPlayerName()

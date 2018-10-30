@@ -25,28 +25,9 @@ namespace SlotMachine.Forms
 
 		private void btnSpin_Click(object sender, EventArgs e)
         {
-            Stopwatch timer = new Stopwatch();
-            timer.Start();
-            while (timer.Elapsed < TimeSpan.FromSeconds(3.6))
-            {
-				GlobalData.internalfrm.spinReel();
-                test1.Text = GlobalData.internalfrm.getSpinOne().ToString();
-                test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
-                test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
-
-				pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
-				pbReel1.Refresh();
-				pbReel2.Image = slotImages.Images[GlobalData.internalfrm.getSpinTwo()];
-				pbReel2.Refresh();
-				pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
-				pbReel3.Refresh();
-                Task.Delay(300).Wait();
-
-            }
-            timer.Stop();
+            cycleReels();
 
             winnings = GlobalData.internalfrm.getReelResult();
-            score += GlobalData.internalfrm.getReelResult();
             if(winnings == 0)
             {
                 score -=  betCounter;
@@ -54,6 +35,7 @@ namespace SlotMachine.Forms
             }
             else
             {
+                score += winnings;
                 txtBalance.Text = score.ToString();
             }
 
@@ -73,6 +55,29 @@ namespace SlotMachine.Forms
 			}
 			GlobalData.internalfrm.ResetCoin();
 		}
+
+        public void cycleReels()
+        {
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            while (timer.Elapsed < TimeSpan.FromSeconds(3.6))
+            {
+                GlobalData.internalfrm.spinReel();
+                test1.Text = GlobalData.internalfrm.getSpinOne().ToString();
+                test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
+                test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
+
+                pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
+                pbReel1.Refresh();
+                pbReel2.Image = slotImages.Images[GlobalData.internalfrm.getSpinTwo()];
+                pbReel2.Refresh();
+                pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
+                pbReel3.Refresh();
+                Task.Delay(300).Wait();
+
+            }
+            timer.Stop();
+        }
 
         private void btnAddCoin_Click(object sender, EventArgs e)
         {

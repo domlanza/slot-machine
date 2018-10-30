@@ -26,5 +26,12 @@ namespace SlotMachine.Forms
 		{
 			lblWinnings.Text="$"+GlobalData.player.getScore().ToString();
 		}
-	}
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
+            Form frmSlots = new frmSlots();
+            frmSlots.Show();
+            this.Close();
+        }
+    }
 }

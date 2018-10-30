@@ -47,7 +47,8 @@ namespace SlotMachine.Classes
         //we can actually drop the parameters here, and call spinReel within this method
         public int getReelResult()
         {
-            reelResult[One]++;
+			int[] reelResult = { 0, 0, 0, 0, 0 };
+			reelResult[One]++;
             reelResult[Two]++;
             reelResult[Three]++;
             //Three of the same
@@ -90,11 +91,11 @@ namespace SlotMachine.Classes
             else if (reelResult[3] == 3)
             {
                 if (betNum == 3)
-                    return 150;
+                    return 225;
                 if (betNum == 2)
-                    return 100;
+                    return 150;
                 if (betNum == 1)
-                    return 50;
+                    return 75;
                 
                 
             }
@@ -102,22 +103,22 @@ namespace SlotMachine.Classes
             else if (reelResult[4] == 3)
             {
                 if (betNum == 3)
-                    return 90;
+                    return 150;
                 if (betNum == 2)
-                    return 60;
+                    return 100;
                 if (betNum == 1)
-                    return 30;				
+                    return 50;				
             }
             //Other Combinations
             //Any three temple T's
             else if (reelResult[0] + reelResult[1] + reelResult[2] == 3)
             {
                 if (betNum == 3)
-                    return 225;
+                    return 90;
                 if (betNum == 2)
-                    return 150;
+                    return 60;
                 if (betNum == 1)
-                    return 75;
+                    return 30;
                 
                 
             }
@@ -165,12 +166,6 @@ namespace SlotMachine.Classes
             }
             //no combos
             return 0;
-        }
-
-        //resets the array
-        public void resetReelResult()
-        {
-            int[] reelResult = { 0,0,0,0,0};
         }
 
         //assigns random values to all three 'panels'

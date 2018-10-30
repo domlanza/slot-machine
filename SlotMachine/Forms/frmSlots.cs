@@ -53,7 +53,6 @@ namespace SlotMachine.Forms
 				//execute our btnPayout click event
 				btnPayout_Click(sender, e);
 			}
-			GlobalData.internalfrm.resetReelResult();
 			GlobalData.internalfrm.ResetCoin();
 		}
 
@@ -68,15 +67,14 @@ namespace SlotMachine.Forms
                 test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
                 test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
 
-                pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
-                pbReel1.Refresh();
+				pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
+				pbReel1.Refresh();
                 pbReel2.Image = slotImages.Images[GlobalData.internalfrm.getSpinTwo()];
                 pbReel2.Refresh();
                 pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
                 pbReel3.Refresh();
                 Task.Delay(300).Wait();
-
-            }
+			}
             timer.Stop();
         }
 

@@ -53,6 +53,7 @@ namespace SlotMachine.Forms
 				//execute our btnPayout click event
 				btnPayout_Click(sender, e);
 			}
+			GlobalData.internalfrm.resetReelResult();
 			GlobalData.internalfrm.ResetCoin();
 		}
 

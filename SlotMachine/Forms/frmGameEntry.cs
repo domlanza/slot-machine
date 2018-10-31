@@ -20,8 +20,6 @@ namespace SlotMachine.Forms
         public frmGameEntry()
         {
             InitializeComponent();
-           // SoundPlayer bgMusic = new System.Media.SoundPlayer(Properties.Resources.theme);
-           // bgMusic.PlayLooping();
         }
 
         private void btnReady_Click(object sender, EventArgs e)
@@ -63,5 +61,11 @@ namespace SlotMachine.Forms
             Form frmSlots = new Forms.frmSlots();
             frmSlots.Show();
         }
-	}   
+
+        private void frmGameEntry_Load(object sender, EventArgs e)
+        {
+            // SoundPlayer bgMusic = new System.Media.SoundPlayer(Properties.Resources.theme);
+            // bgMusic.PlayLooping();
+        }
+    }   
 }

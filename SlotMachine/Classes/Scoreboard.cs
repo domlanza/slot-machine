@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SlotMachine.Classes
 {
-    class Scoreboard
+    public class Scoreboard
     {
         private List<String> scoreboardList = new List<String>();
         private string strPlayerInfo = null;
@@ -36,6 +36,22 @@ namespace SlotMachine.Classes
             
         }
 
+        public string displayScoreboard()
+        {
+            updateScoreboard(GlobalData.player.preparePlayerScore());
+            string output = "";
+            string[] outputArray;
+            string formattedScore; 
+
+            foreach(string score in scoreboardList)
+            {
+                outputArray = score.Split(',');
+                formattedScore = "Player Name: " + outputArray[1] + " Score: " + outputArray[0];    
+                output += formattedScore + "\n";
+            }
+            return output;
+        }
+
         public void writeFile()
         {
             try
@@ -56,6 +72,7 @@ namespace SlotMachine.Classes
 
         public void updateScoreboard(string score)
         {
+            readFile();
             scoreboardList.Add(score);
             scoreboardList.Sort();
             if(scoreboardList.Count >= 11)
@@ -65,6 +82,7 @@ namespace SlotMachine.Classes
                     scoreboardList.RemoveAt(i);
                 }
             }
+            writeFile();
         }
 
 

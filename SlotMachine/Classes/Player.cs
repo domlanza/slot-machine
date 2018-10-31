@@ -28,7 +28,6 @@ namespace SlotMachine.Classes
             return playerName;
         }
 
-
 		public void setScore(int scoreInput)
 		{
 			score = scoreInput;
@@ -42,6 +41,18 @@ namespace SlotMachine.Classes
         {
             return score;
         }
+
+        public int calculateScore()
+        {
+            return score = score - playerBalance;
+        }
+
+        public string preparePlayerScore()
+        {
+            string score = calculateScore().ToString() + ", " + playerName;
+            return score; 
+        }
+
 
     }
 }

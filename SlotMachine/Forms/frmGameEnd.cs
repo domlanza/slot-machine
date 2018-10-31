@@ -33,5 +33,10 @@ namespace SlotMachine.Forms
             frmSlots.Show();
             this.Close();
         }
+
+        private void btnViewScores_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(GlobalData.scoreboard.displayScoreboard(),"Top Scores");
+        }
     }
 }

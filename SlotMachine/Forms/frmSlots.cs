@@ -73,7 +73,7 @@ namespace SlotMachine.Forms
                 pbReel2.Refresh();
                 pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
                 pbReel3.Refresh();
-                Task.Delay(300).Wait();
+                Task.Delay(100).Wait();
 			}
             timer.Stop();
         }

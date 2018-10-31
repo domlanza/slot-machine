@@ -20,8 +20,8 @@ namespace SlotMachine.Forms
         public frmGameEntry()
         {
             InitializeComponent();
-            //SoundPlayer bgMusic = new System.Media.SoundPlayer(Properties.Resources.theme);
-            //bgMusic.PlayLooping();
+           // SoundPlayer bgMusic = new System.Media.SoundPlayer(Properties.Resources.theme);
+           // bgMusic.PlayLooping();
         }
 
         private void btnReady_Click(object sender, EventArgs e)

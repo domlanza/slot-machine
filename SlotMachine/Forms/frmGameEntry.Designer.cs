@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGameEntry));
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -42,7 +43,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(212, 57);
+            this.lblWelcome.Location = new System.Drawing.Point(228, 45);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(357, 25);
             this.lblWelcome.TabIndex = 0;
@@ -52,7 +53,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(157, 110);
+            this.lblName.Location = new System.Drawing.Point(215, 100);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(226, 20);
             this.lblName.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(413, 110);
+            this.txtName.Location = new System.Drawing.Point(471, 100);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(125, 22);
@@ -69,10 +70,11 @@
             // btnEnterGame
             // 
             this.btnEnterGame.Enabled = false;
-            this.btnEnterGame.Location = new System.Drawing.Point(340, 325);
+            this.btnEnterGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnterGame.Location = new System.Drawing.Point(271, 364);
             this.btnEnterGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEnterGame.Name = "btnEnterGame";
-            this.btnEnterGame.Size = new System.Drawing.Size(162, 50);
+            this.btnEnterGame.Size = new System.Drawing.Size(301, 52);
             this.btnEnterGame.TabIndex = 4;
             this.btnEnterGame.Text = "Play";
             this.btnEnterGame.UseVisualStyleBackColor = true;
@@ -81,15 +83,15 @@
             // lblInstructions
             // 
             this.lblInstructions.AutoSize = true;
-            this.lblInstructions.Location = new System.Drawing.Point(158, 238);
+            this.lblInstructions.Location = new System.Drawing.Point(163, 220);
             this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(212, 17);
+            this.lblInstructions.Size = new System.Drawing.Size(573, 102);
             this.lblInstructions.TabIndex = 5;
-            this.lblInstructions.Text = "Instructions and tips will go here!";
+            this.lblInstructions.Text = resources.GetString("lblInstructions.Text");
             // 
             // btnReady
             // 
-            this.btnReady.Location = new System.Drawing.Point(413, 182);
+            this.btnReady.Location = new System.Drawing.Point(471, 175);
             this.btnReady.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReady.Name = "btnReady";
             this.btnReady.Size = new System.Drawing.Size(88, 30);
@@ -100,7 +102,7 @@
             // 
             // txtMoney
             // 
-            this.txtMoney.Location = new System.Drawing.Point(413, 149);
+            this.txtMoney.Location = new System.Drawing.Point(471, 139);
             this.txtMoney.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(125, 22);
@@ -110,7 +112,7 @@
             // 
             this.lblEnterMoney.AutoSize = true;
             this.lblEnterMoney.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnterMoney.Location = new System.Drawing.Point(157, 149);
+            this.lblEnterMoney.Location = new System.Drawing.Point(215, 139);
             this.lblEnterMoney.Name = "lblEnterMoney";
             this.lblEnterMoney.Size = new System.Drawing.Size(228, 20);
             this.lblEnterMoney.TabIndex = 6;

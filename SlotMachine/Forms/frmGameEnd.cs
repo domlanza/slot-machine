@@ -19,6 +19,7 @@ namespace SlotMachine.Forms
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
+            GlobalData.scoreboard.writeFile();
             Application.Exit();
         }
 

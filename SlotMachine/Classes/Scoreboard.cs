@@ -82,7 +82,6 @@ namespace SlotMachine.Classes
                     scoreboardList.RemoveAt(i);
                 }
             }
-            writeFile();
         }
 
 

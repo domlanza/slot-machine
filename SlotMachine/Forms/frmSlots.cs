@@ -73,7 +73,7 @@ namespace SlotMachine.Forms
                 pbReel2.Refresh();
                 pbReel3.Image = slotImages.Images[GlobalData.internalfrm.getSpinThree()];
                 pbReel3.Refresh();
-                Task.Delay(100).Wait();
+                Task.Delay(50).Wait();
 			}
             timer.Stop();
         }
@@ -133,11 +133,17 @@ namespace SlotMachine.Forms
 
         private void btnPayout_Click(object sender, EventArgs e)
         {
-			//set player score at end of game
-			GlobalData.player.setScore(score);
-            this.Close();
+            GlobalData.player.setScore(score);
             Form frmGameEnd = new Forms.frmGameEnd();
-            frmGameEnd.Show();
+            if (GlobalData.player.calculateScore() > 0)
+            {
+                this.Close();
+                frmGameEnd.Show();
+            }
+            else
+            {
+                MessageBox.Show("You haven't won anything! Keep playing to win.", "No Quitting!");
+            }
         }
 
 		private void frmSlots_Load(object sender, EventArgs e)

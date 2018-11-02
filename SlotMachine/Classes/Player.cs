@@ -47,10 +47,16 @@ namespace SlotMachine.Classes
             return score = score - playerBalance;
         }
 
+        public void resetPlayer()
+        {
+            score = 0;
+            playerBalance = 0;
+            playerName = "";
+        }
         public string preparePlayerScore()
         {
-            string score = calculateScore().ToString() + ", " + playerName;
-            return score; 
+            string finalScore = score + ", " + playerName;
+            return finalScore; 
         }
 
 

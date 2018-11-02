@@ -19,17 +19,18 @@ namespace SlotMachine.Forms
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            GlobalData.scoreboard.writeFile();
             Application.Exit();
         }
 
 		private void frmGameEnd_Load(object sender, EventArgs e)
 		{
 			lblWinnings.Text="$"+GlobalData.player.getScore().ToString();
-		}
+            GlobalData.scoreboard.updateScoreboard(GlobalData.player.preparePlayerScore());
+        }
 
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
+            GlobalData.player.resetPlayer();
             Form frmSlots = new frmSlots();
             frmSlots.Show();
             this.Close();

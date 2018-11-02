@@ -26,6 +26,7 @@ namespace SlotMachine.Classes
                     {
                         strPlayerInfo = scoreboardReader.ReadLine();
                         scoreboardList.Add(strPlayerInfo);
+                        MessageBox.Show("Added: " + strPlayerInfo);
                     }
                 }
             }
@@ -38,12 +39,10 @@ namespace SlotMachine.Classes
 
         public string displayScoreboard()
         {
-            updateScoreboard(GlobalData.player.preparePlayerScore());
             string output = "";
+            string formattedScore;
             string[] outputArray;
-            string formattedScore; 
-
-            foreach(string score in scoreboardList)
+            foreach (string score in scoreboardList)
             {
                 outputArray = score.Split(',');
                 formattedScore = "Player Name: " + outputArray[1] + " Score: " + outputArray[0];    
@@ -56,11 +55,11 @@ namespace SlotMachine.Classes
         {
             try
             {
-                using(scoreboardWriter = new StreamWriter(scoreboardFilePath))
+                using (scoreboardWriter = new StreamWriter(scoreboardFilePath, true))
                 {
                     foreach (string score in scoreboardList)
                     {
-                        scoreboardWriter.WriteLine(score + "\n");
+                        scoreboardWriter.WriteLine(score);
                     }
                 }
             }
@@ -72,8 +71,10 @@ namespace SlotMachine.Classes
 
         public void updateScoreboard(string score)
         {
-            readFile();
             scoreboardList.Add(score);
+            MessageBox.Show("Added: From Play " + score);
+            readFile();
+
             scoreboardList.Sort();
             if(scoreboardList.Count >= 11)
             {
@@ -82,6 +83,7 @@ namespace SlotMachine.Classes
                     scoreboardList.RemoveAt(i);
                 }
             }
+            writeFile();
         }
 
 

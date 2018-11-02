@@ -16,8 +16,10 @@ namespace SlotMachine.Forms
         private int betCounter = 0;
         private int winnings = 0;
         private int score = GlobalData.player.getBalance();
-
-        public frmSlots()
+		System.Media.SoundPlayer spinSound = new System.Media.SoundPlayer(@"theme");
+		System.Media.SoundPlayer addCoinSound = new System.Media.SoundPlayer(@"theme");
+		System.Media.SoundPlayer payout = new System.Media.SoundPlayer(@"theme");
+		public frmSlots()
         {
             InitializeComponent();
         }
@@ -25,9 +27,10 @@ namespace SlotMachine.Forms
 
 		private void btnSpin_Click(object sender, EventArgs e)
         {
-            cycleReels();
+			//spinSound.Play();
 
-            winnings = GlobalData.internalfrm.getReelResult();
+			cycleReels();
+			winnings = GlobalData.internalfrm.getReelResult();
             if(winnings == 0)
             {
                 score -=  betCounter;
@@ -88,6 +91,7 @@ namespace SlotMachine.Forms
 			}
 			else
 			{
+				//addCoinSound.Play();
 				if (betCounter <= 3)
 				{
 					txtBet.Text = betCounter.ToString();
@@ -123,6 +127,7 @@ namespace SlotMachine.Forms
 			}
 			else
 			{
+				//addCoinSound.Play();
 				GlobalData.internalfrm.AddCoin(3);
 				txtBet.Text = betCounter.ToString();
 				btnPlaceBet.Enabled = false;
@@ -133,6 +138,7 @@ namespace SlotMachine.Forms
 
         private void btnPayout_Click(object sender, EventArgs e)
         {
+			//payout.Play();
 			//set player score at end of game
 			GlobalData.player.setScore(score);
             this.Close();

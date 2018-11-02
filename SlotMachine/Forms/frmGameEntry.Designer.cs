@@ -137,7 +137,6 @@
             this.Name = "frmGameEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to Slots";
-            this.Load += new System.EventHandler(this.frmGameEntry_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

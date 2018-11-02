@@ -14,6 +14,8 @@ namespace SlotMachine.Forms
 {
     public partial class frmGameEntry : Form
     {
+		SoundPlayer bgMusic = new System.Media.SoundPlayer(Properties.Resources.theme);
+		BackgroundWorker worker = new BackgroundWorker();
         private string playerName;
         private int startingBalance = 0;
 
@@ -61,11 +63,5 @@ namespace SlotMachine.Forms
             Form frmSlots = new Forms.frmSlots();
             frmSlots.Show();
         }
-
-        private void frmGameEntry_Load(object sender, EventArgs e)
-        {
-            // SoundPlayer bgMusic = new System.Media.SoundPlayer(Properties.Resources.theme);
-            // bgMusic.PlayLooping();
-        }
-    }   
+	}   
 }

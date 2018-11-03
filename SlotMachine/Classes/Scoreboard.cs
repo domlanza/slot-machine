@@ -11,31 +11,10 @@ namespace SlotMachine.Classes
     public class Scoreboard
     {
         private List<String> scoreboardList = new List<String>();
-        private string strPlayerInfo = null;
+        private string strPlayerInfo;
         private string scoreboardFilePath = "scoreboard.txt";
         StreamReader scoreboardReader;
         StreamWriter scoreboardWriter;
-
-        public void readFile()
-        {
-            try
-            {
-                using (scoreboardReader = new StreamReader(scoreboardFilePath))
-                {
-                    while(scoreboardReader.ReadLine() != null )
-                    {
-                        strPlayerInfo = scoreboardReader.ReadLine();
-                        scoreboardList.Add(strPlayerInfo);
-                        MessageBox.Show("Added: " + strPlayerInfo);
-                    }
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Scoreboard not found!", "Error");
-            }
-            
-        }
 
         public string displayScoreboard()
         {
@@ -53,6 +32,10 @@ namespace SlotMachine.Classes
 
         public void writeFile()
         {
+            if (File.Exists(scoreboardFilePath))
+            {
+                File.Delete(scoreboardFilePath);
+            }
             try
             {
                 using (scoreboardWriter = new StreamWriter(scoreboardFilePath, true))
@@ -65,14 +48,32 @@ namespace SlotMachine.Classes
             }
             catch
             {
-                MessageBox.Show("Scoreboard not saved.", "Error");
+                MessageBox.Show("Scoreboard does not exist.", "Error");
             }
+        }
+
+        public void readFile()
+        {
+            try
+            {
+                using (scoreboardReader = new StreamReader(scoreboardFilePath, true))
+                {
+                    while ((strPlayerInfo = scoreboardReader.ReadLine()) != null)
+                    { 
+                        scoreboardList.Add(strPlayerInfo);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Scoreboard not found!", "Error");
+            }
+
         }
 
         public void updateScoreboard(string score)
         {
             scoreboardList.Add(score);
-            MessageBox.Show("Added: From Play " + score);
             readFile();
 
             scoreboardList.Sort();

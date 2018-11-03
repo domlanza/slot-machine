@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace SlotMachine.Classes
 {
@@ -31,51 +32,55 @@ namespace SlotMachine.Classes
 
         public void writeFile()
         {
-            if (File.Exists(scoreboardFilePath))
-            {
-                File.Delete(scoreboardFilePath);
-            }
-            try
-            {
-                using (scoreboardWriter = new StreamWriter(scoreboardFilePath, true))
-                {
-                    foreach (Tuple<string, int> scoreEntry in scoreboardList)
-                    {
-                        scoreboardWriter.WriteLine(scoreEntry);
-                    }
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Scoreboard does not exist.", "Error");
-            }
-        }
+			if (File.Exists(scoreboardFilePath))
+			{
+			    File.Delete(scoreboardFilePath);
+			}
+			try
+			{
+				using (scoreboardWriter = new StreamWriter(scoreboardFilePath, true))
+				{
+					foreach (Tuple<string, int> scoreEntry in scoreboardList)
+					{
+						scoreboardWriter.WriteLine(scoreEntry);
+					}
+				}
+			}
+			catch
+			{
+				MessageBox.Show("Scoreboard does not write", "Error");
+			}
+
+		}
 
         public void readFile()
         {
-            try
-            {
+            //try
+            //{
                 using (scoreboardReader = new StreamReader(scoreboardFilePath, true))
                 {
                     while (!scoreboardReader.EndOfStream)
                     {
                         strPlayerInfo = scoreboardReader.ReadLine();
-                        strPlayerInfo.Replace('(', ' ');
-                        strPlayerInfo.Replace(')', ' ');
-                        string[] inputArray = strPlayerInfo.Split(',');
 
+						
+						string finalplayerlist = strPlayerInfo.TrimEnd(')');
+						finalplayerlist = finalplayerlist.TrimStart('(');
+						string[] inputArray = finalplayerlist.Split(',');
+						
                         string playerName = inputArray[0];
+						Console.WriteLine(inputArray[1]);
                         int playerScore = Convert.ToInt32(inputArray[1]);
 
                         Tuple<string, int> fileTuple = Tuple.Create<string, int>(playerName, playerScore);
                         scoreboardList.Add(fileTuple);
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Scoreboard not found!", "Error");
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Scoreboard not found!", "Error");
+            //}
 
         }
 

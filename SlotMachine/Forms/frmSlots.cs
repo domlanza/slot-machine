@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace SlotMachine.Forms
 {
@@ -16,6 +17,8 @@ namespace SlotMachine.Forms
         private int betCounter = 0;
         private int winnings = 0;
         private int score = GlobalData.player.getBalance();
+
+		//SoundPlayer jackpot = new SoundPlayer("jackpot");
 
         public frmSlots()
         {
@@ -35,6 +38,7 @@ namespace SlotMachine.Forms
             }
             else
             {
+				//jackpot.Play();
                 score += winnings;
                 txtBalance.Text = score.ToString();
             }

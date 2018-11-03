@@ -109,6 +109,7 @@
     <Content Include="Images\green-t.png" />
     <Content Include="Images\red-t.png" />
     <Content Include="Images\stella-owl.png" />
+    <Content Include="Resources\Jackpot.mp3" />
     <None Include="Resources\formbg.png" />
     <None Include="Resources\theme.wav" />
     <None Include="Resources\theme.mp3" />

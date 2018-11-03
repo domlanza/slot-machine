@@ -55,8 +55,6 @@ namespace SlotMachine.Classes
 
         public void readFile()
         {
-            //try
-            //{
                 using (scoreboardReader = new StreamReader(scoreboardFilePath, true))
                 {
                     while (!scoreboardReader.EndOfStream)
@@ -69,19 +67,12 @@ namespace SlotMachine.Classes
 						string[] inputArray = finalplayerlist.Split(',');
 						
                         string playerName = inputArray[0];
-						Console.WriteLine(inputArray[1]);
                         int playerScore = Convert.ToInt32(inputArray[1]);
 
                         Tuple<string, int> fileTuple = Tuple.Create<string, int>(playerName, playerScore);
                         scoreboardList.Add(fileTuple);
                     }
                 }
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Scoreboard not found!", "Error");
-            //}
-
         }
 
         public void updateScoreboard(string score)
@@ -94,9 +85,9 @@ namespace SlotMachine.Classes
             scoreboardList.Add(gameTuple);
             readFile();
 
-            scoreboardList.Sort((x, y) => y.Item1.CompareTo(y.Item1));
+            scoreboardList = scoreboardList.OrderBy(y => y.Item2).ToList();
 
-            if (scoreboardList.Count >= 11)
+			if (scoreboardList.Count >= 11)
             {
                 for(int i = 1; i <= scoreboardList.Count; i++)
                 {

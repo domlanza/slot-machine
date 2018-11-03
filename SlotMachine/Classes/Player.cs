@@ -55,7 +55,7 @@ namespace SlotMachine.Classes
         }
         public string preparePlayerScore()
         {
-            string finalScore = score + ", " + playerName;
+            string finalScore = playerName + ", " + score;
             return finalScore; 
         }
 

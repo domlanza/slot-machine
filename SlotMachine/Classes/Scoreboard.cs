@@ -10,7 +10,8 @@ namespace SlotMachine.Classes
 {
     public class Scoreboard
     {
-        private List<String> scoreboardList = new List<String>();
+        private List<Tuple<string, int>> scoreboardList = new List<Tuple<string, int>>();
+
         private string strPlayerInfo;
         private string scoreboardFilePath = "scoreboard.txt";
         StreamReader scoreboardReader;
@@ -20,11 +21,9 @@ namespace SlotMachine.Classes
         {
             string output = "";
             string formattedScore;
-            string[] outputArray;
-            foreach (string score in scoreboardList)
+            foreach (Tuple<string, int> scoreEntry in scoreboardList)
             {
-                outputArray = score.Split(',');
-                formattedScore = "Player Name: " + outputArray[1] + " Score: " + outputArray[0];    
+                formattedScore = "Player Name: " + scoreEntry.Item1 + " Score: " + scoreEntry.Item2;    
                 output += formattedScore + "\n";
             }
             return output;
@@ -40,9 +39,9 @@ namespace SlotMachine.Classes
             {
                 using (scoreboardWriter = new StreamWriter(scoreboardFilePath, true))
                 {
-                    foreach (string score in scoreboardList)
+                    foreach (Tuple<string, int> scoreEntry in scoreboardList)
                     {
-                        scoreboardWriter.WriteLine(score);
+                        scoreboardWriter.WriteLine(scoreEntry);
                     }
                 }
             }
@@ -58,9 +57,18 @@ namespace SlotMachine.Classes
             {
                 using (scoreboardReader = new StreamReader(scoreboardFilePath, true))
                 {
-                    while ((strPlayerInfo = scoreboardReader.ReadLine()) != null)
-                    { 
-                        scoreboardList.Add(strPlayerInfo);
+                    while (!scoreboardReader.EndOfStream)
+                    {
+                        strPlayerInfo = scoreboardReader.ReadLine();
+                        strPlayerInfo.Replace('(', ' ');
+                        strPlayerInfo.Replace(')', ' ');
+                        string[] inputArray = strPlayerInfo.Split(',');
+
+                        string playerName = inputArray[0];
+                        int playerScore = Convert.ToInt32(inputArray[1]);
+
+                        Tuple<string, int> fileTuple = Tuple.Create<string, int>(playerName, playerScore);
+                        scoreboardList.Add(fileTuple);
                     }
                 }
             }
@@ -73,11 +81,17 @@ namespace SlotMachine.Classes
 
         public void updateScoreboard(string score)
         {
-            scoreboardList.Add(score);
+            string[] scoreArray = score.Split(',');
+            string playerName = scoreArray[0];
+            int playerScore = Convert.ToInt32(scoreArray[1]);
+            Tuple<string, int> gameTuple = Tuple.Create<string, int>(playerName, playerScore);
+
+            scoreboardList.Add(gameTuple);
             readFile();
 
-            scoreboardList.Sort();
-            if(scoreboardList.Count >= 11)
+            scoreboardList.Sort((x, y) => y.Item1.CompareTo(y.Item1));
+
+            if (scoreboardList.Count >= 11)
             {
                 for(int i = 1; i <= scoreboardList.Count; i++)
                 {

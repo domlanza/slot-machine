@@ -1,16 +1,18 @@
-﻿using System;
+﻿/* Temple University / CIS 3309 / Slot Machine
+ * Form: frmSlots 
+ * Author: Zachary Goncalves & Michael Rodriguez
+ */
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 
 namespace SlotMachine.Classes
 {
     public class Scoreboard
     {
+        // Create a list of tuples
         private List<Tuple<string, int>> scoreboardList = new List<Tuple<string, int>>();
 
         private string strPlayerInfo;
@@ -18,6 +20,8 @@ namespace SlotMachine.Classes
         StreamReader scoreboardReader;
         StreamWriter scoreboardWriter;
 
+        // Formates each tuple in scoreboardList and concatenates them into a single string.
+        // Author: Zachary Goncalves
         public string displayScoreboard()
         {
             string output = "";
@@ -30,6 +34,8 @@ namespace SlotMachine.Classes
             return output;
         }
 
+        // Checks and deletes scoreboard file if it exists. Writes all items in scoreboardList to file.
+        // Author: Zachary Goncalves
         public void writeFile()
         {
 			if (File.Exists(scoreboardFilePath))
@@ -53,35 +59,39 @@ namespace SlotMachine.Classes
 
 		}
 
+        // Reads all entries in scoreboard file, sanatizes them, converts them to a tuple, and 
+        // adds them to scoreboardList.
+        // Authors: Zachary Goncalves & Michael Rodriguez
         public void readFile()
         {
-			if (File.Exists(scoreboardFilePath) == false)
-			{
-				//File.Create(scoreboardFilePath);
-			}
-				using (scoreboardReader = new StreamReader(scoreboardFilePath, true))
-				{
-					while (!scoreboardReader.EndOfStream)
-					{
-						strPlayerInfo = scoreboardReader.ReadLine();
+            if (File.Exists(scoreboardFilePath) == false)
+            {
+                using (scoreboardReader = new StreamReader(scoreboardFilePath, true))
+                {
+                    while (!scoreboardReader.EndOfStream)
+                    {
+                        strPlayerInfo = scoreboardReader.ReadLine();
 
 
-						string finalplayerlist = strPlayerInfo.TrimEnd(')');
-						finalplayerlist = finalplayerlist.TrimStart('(');
-						finalplayerlist.Trim();
+                        string finalplayerlist = strPlayerInfo.TrimEnd(')');
+                        finalplayerlist = finalplayerlist.TrimStart('(');
+                        finalplayerlist.Trim();
 
-						string[] inputArray = finalplayerlist.Split(',');
+                        string[] inputArray = finalplayerlist.Split(',');
 
-						string playerName = inputArray[0];
-						int playerScore = Convert.ToInt32(inputArray[1]);
+                        string playerName = inputArray[0];
+                        int playerScore = Convert.ToInt32(inputArray[1]);
 
-						Tuple<string, int> fileTuple = Tuple.Create<string, int>(playerName, playerScore);
-						scoreboardList.Add(fileTuple);
-					}
-				}
-			
+                        Tuple<string, int> fileTuple = Tuple.Create<string, int>(playerName, playerScore);
+                        scoreboardList.Add(fileTuple);
+                    }
+                }
+            }
         }
 
+        // Updates scoreboard with value from latest play and from scoreboard. 
+        // Deletes any entry above index 10 in list and then writes out scoreboardList to a file.
+        // Authors: Zachary Goncalves & Michael Rodriguez
         public void updateScoreboard(string score)
         {
             string[] scoreArray = score.Split(',');

@@ -17,8 +17,7 @@ namespace SlotMachine.Forms
         private int betCounter = 0;
         private int winnings = 0;
         private int score = GlobalData.player.getBalance();
-
-		//SoundPlayer jackpot = new SoundPlayer("jackpot");
+		SoundPlayer jackpot = new SoundPlayer(("Michael_Rodriguez.source.repos.slot-machine.SlotMachine.Resources.Jackpot.mp3"));
 
         public frmSlots()
         {
@@ -29,8 +28,8 @@ namespace SlotMachine.Forms
 		private void btnSpin_Click(object sender, EventArgs e)
         {
             cycleReels();
-
-            winnings = GlobalData.internalfrm.getReelResult();
+			jackpot.Play();
+			winnings = GlobalData.internalfrm.getReelResult();
             if(winnings == 0)
             {
                 score -=  betCounter;
@@ -38,8 +37,8 @@ namespace SlotMachine.Forms
             }
             else
             {
-				//jackpot.Play();
-                score += winnings;
+				
+				score += winnings;
                 txtBalance.Text = score.ToString();
             }
 

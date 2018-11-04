@@ -55,24 +55,31 @@ namespace SlotMachine.Classes
 
         public void readFile()
         {
-                using (scoreboardReader = new StreamReader(scoreboardFilePath, true))
-                {
-                    while (!scoreboardReader.EndOfStream)
-                    {
-                        strPlayerInfo = scoreboardReader.ReadLine();
+			if (File.Exists(scoreboardFilePath) == false)
+			{
+				//File.Create(scoreboardFilePath);
+			}
+				using (scoreboardReader = new StreamReader(scoreboardFilePath, true))
+				{
+					while (!scoreboardReader.EndOfStream)
+					{
+						strPlayerInfo = scoreboardReader.ReadLine();
 
-						
+
 						string finalplayerlist = strPlayerInfo.TrimEnd(')');
 						finalplayerlist = finalplayerlist.TrimStart('(');
-						string[] inputArray = finalplayerlist.Split(',');
-						
-                        string playerName = inputArray[0];
-                        int playerScore = Convert.ToInt32(inputArray[1]);
+						finalplayerlist.Trim();
 
-                        Tuple<string, int> fileTuple = Tuple.Create<string, int>(playerName, playerScore);
-                        scoreboardList.Add(fileTuple);
-                    }
-                }
+						string[] inputArray = finalplayerlist.Split(',');
+
+						string playerName = inputArray[0];
+						int playerScore = Convert.ToInt32(inputArray[1]);
+
+						Tuple<string, int> fileTuple = Tuple.Create<string, int>(playerName, playerScore);
+						scoreboardList.Add(fileTuple);
+					}
+				}
+			
         }
 
         public void updateScoreboard(string score)
@@ -87,12 +94,9 @@ namespace SlotMachine.Classes
 
             scoreboardList = scoreboardList.OrderByDescending(y => y.Item2).ToList();
 
-			if (scoreboardList.Count >= 11)
-            {
-                for(int i = 1; i <= scoreboardList.Count; i++)
-                {
-                    scoreboardList.RemoveAt(i);
-                }
+			if (scoreboardList.Count == 11)
+            {       
+                    scoreboardList.RemoveAt(10);  
             }
             writeFile();
         }

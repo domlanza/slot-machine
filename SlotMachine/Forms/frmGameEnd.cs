@@ -31,8 +31,8 @@ namespace SlotMachine.Forms
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
             GlobalData.player.resetPlayer();
-            Form frmSlots = new frmSlots();
-            frmSlots.Show();
+            Form newGameEntry = new frmGameEntry();
+            newGameEntry.Show();
             this.Close();
         }
 

@@ -146,7 +146,11 @@ namespace SlotMachine.Forms
             }
             else
             {
-                MessageBox.Show("You haven't won anything! Keep playing to win.", "No Quitting!");
+                var result = MessageBox.Show("You haven't won anything! Keep playing to win. \n\nWould you like to quit?", "End Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
             }
         }
 

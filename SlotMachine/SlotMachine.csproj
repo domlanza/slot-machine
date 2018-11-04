@@ -51,11 +51,6 @@
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\RNGen.cs" />
     <Compile Include="Classes\Scoreboard.cs" />
-    <Compile Include="Forms\frmEntrybg.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>frmEntrybg.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmGameEnd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,10 +71,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frmEntrybg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>frmEntrybg.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmGameEnd.resx">
       <DependentUpon>frmGameEnd.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +109,7 @@
     <Content Include="Images\green-t.png" />
     <Content Include="Images\red-t.png" />
     <Content Include="Images\stella-owl.png" />
+    <None Include="Resources\Jackpot.wav" />
     <None Include="Resources\formentrybg.png" />
     <None Include="Resources\formentrybg1.png" />
     <Content Include="Resources\Jackpot.mp3" />

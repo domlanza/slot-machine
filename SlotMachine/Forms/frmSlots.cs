@@ -17,7 +17,7 @@ namespace SlotMachine.Forms
         private int betCounter = 0;
         private int winnings = 0;
         private int score = GlobalData.player.getBalance();
-		SoundPlayer jackpot = new SoundPlayer(("Michael_Rodriguez.source.repos.slot-machine.SlotMachine.Resources.Jackpot.mp3"));
+		SoundPlayer jackpot = new SoundPlayer(Properties.Resources.Jackpot);
 
         public frmSlots()
         {

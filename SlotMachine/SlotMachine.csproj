@@ -104,6 +104,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="icon_AyJ_icon.ico" />
     <Content Include="Images\blue-t.png" />
     <Content Include="Images\drawn-owl.png" />
     <Content Include="Images\green-t.png" />
@@ -112,6 +113,7 @@
     <None Include="Resources\Jackpot.wav" />
     <None Include="Resources\formentrybg.png" />
     <None Include="Resources\formentrybg1.png" />
+    <None Include="Resources\frmgameend.png" />
     <Content Include="Resources\Jackpot.mp3" />
     <None Include="Resources\formbg.png" />
     <None Include="Resources\theme.wav" />

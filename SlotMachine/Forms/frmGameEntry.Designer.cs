@@ -125,7 +125,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::SlotMachine.Properties.Resources.formentrybg;
-            this.ClientSize = new System.Drawing.Size(936, 624);
+            this.ClientSize = new System.Drawing.Size(957, 624);
             this.Controls.Add(this.btnReady);
             this.Controls.Add(this.txtMoney);
             this.Controls.Add(this.lblEnterMoney);
@@ -134,6 +134,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblWelcome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

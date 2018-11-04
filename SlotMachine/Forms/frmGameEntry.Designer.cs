@@ -28,119 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGameEntry));
-			this.lblWelcome = new System.Windows.Forms.Label();
-			this.lblName = new System.Windows.Forms.Label();
-			this.txtName = new System.Windows.Forms.TextBox();
-			this.btnEnterGame = new System.Windows.Forms.Button();
-			this.lblInstructions = new System.Windows.Forms.Label();
-			this.btnReady = new System.Windows.Forms.Button();
-			this.txtMoney = new System.Windows.Forms.TextBox();
-			this.lblEnterMoney = new System.Windows.Forms.Label();
-			this.SuspendLayout();
-			// 
-			// lblWelcome
-			// 
-			this.lblWelcome.AutoSize = true;
-			this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblWelcome.Location = new System.Drawing.Point(228, 45);
-			this.lblWelcome.Name = "lblWelcome";
-			this.lblWelcome.Size = new System.Drawing.Size(357, 25);
-			this.lblWelcome.TabIndex = 0;
-			this.lblWelcome.Text = "Welcome to the Fantastic Slot Machine!";
-			// 
-			// lblName
-			// 
-			this.lblName.AutoSize = true;
-			this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblName.Location = new System.Drawing.Point(215, 100);
-			this.lblName.Name = "lblName";
-			this.lblName.Size = new System.Drawing.Size(226, 20);
-			this.lblName.TabIndex = 1;
-			this.lblName.Text = "Please enter your name to begin:";
-			// 
-			// txtName
-			// 
-			this.txtName.Location = new System.Drawing.Point(471, 100);
-			this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.txtName.Name = "txtName";
-			this.txtName.Size = new System.Drawing.Size(125, 22);
-			this.txtName.TabIndex = 2;
-			// 
-			// btnEnterGame
-			// 
-			this.btnEnterGame.Enabled = false;
-			this.btnEnterGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEnterGame.Location = new System.Drawing.Point(271, 364);
-			this.btnEnterGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.btnEnterGame.Name = "btnEnterGame";
-			this.btnEnterGame.Size = new System.Drawing.Size(301, 52);
-			this.btnEnterGame.TabIndex = 4;
-			this.btnEnterGame.Text = "Play";
-			this.btnEnterGame.UseVisualStyleBackColor = true;
-			this.btnEnterGame.Click += new System.EventHandler(this.btnEnterGame_Click);
-			// 
-			// lblInstructions
-			// 
-			this.lblInstructions.AutoSize = true;
-			this.lblInstructions.Location = new System.Drawing.Point(163, 220);
-			this.lblInstructions.Name = "lblInstructions";
-			this.lblInstructions.Size = new System.Drawing.Size(573, 102);
-			this.lblInstructions.TabIndex = 5;
-			this.lblInstructions.Text = resources.GetString("lblInstructions.Text");
-			// 
-			// btnReady
-			// 
-			this.btnReady.Location = new System.Drawing.Point(471, 175);
-			this.btnReady.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.btnReady.Name = "btnReady";
-			this.btnReady.Size = new System.Drawing.Size(88, 30);
-			this.btnReady.TabIndex = 8;
-			this.btnReady.Text = "Ready";
-			this.btnReady.UseVisualStyleBackColor = true;
-			this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
-			// 
-			// txtMoney
-			// 
-			this.txtMoney.Location = new System.Drawing.Point(471, 139);
-			this.txtMoney.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.txtMoney.Name = "txtMoney";
-			this.txtMoney.Size = new System.Drawing.Size(125, 22);
-			this.txtMoney.TabIndex = 7;
-			// 
-			// lblEnterMoney
-			// 
-			this.lblEnterMoney.AutoSize = true;
-			this.lblEnterMoney.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblEnterMoney.Location = new System.Drawing.Point(215, 139);
-			this.lblEnterMoney.Name = "lblEnterMoney";
-			this.lblEnterMoney.Size = new System.Drawing.Size(228, 20);
-			this.lblEnterMoney.TabIndex = 6;
-			this.lblEnterMoney.Text = "Please enter your starting money:";
-			// 
-			// frmGameEntry
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.White;
-			this.BackgroundImage = global::SlotMachine.Properties.Resources.formentrybg;
-			this.ClientSize = new System.Drawing.Size(832, 461);
-			this.Controls.Add(this.btnReady);
-			this.Controls.Add(this.txtMoney);
-			this.Controls.Add(this.lblEnterMoney);
-			this.Controls.Add(this.lblInstructions);
-			this.Controls.Add(this.btnEnterGame);
-			this.Controls.Add(this.txtName);
-			this.Controls.Add(this.lblName);
-			this.Controls.Add(this.lblWelcome);
-			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.MaximizeBox = false;
-			this.MinimizeBox = false;
-			this.Name = "frmGameEntry";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Welcome to Slots";
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGameEntry));
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnEnterGame = new System.Windows.Forms.Button();
+            this.lblInstructions = new System.Windows.Forms.Label();
+            this.btnReady = new System.Windows.Forms.Button();
+            this.txtMoney = new System.Windows.Forms.TextBox();
+            this.lblEnterMoney = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(262, 100);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(433, 29);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "Welcome to the Fantastic Slot Machine!";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(267, 153);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(272, 25);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Please enter your name to begin:";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(555, 153);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(140, 26);
+            this.txtName.TabIndex = 2;
+            // 
+            // btnEnterGame
+            // 
+            this.btnEnterGame.Enabled = false;
+            this.btnEnterGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnterGame.Location = new System.Drawing.Point(319, 494);
+            this.btnEnterGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEnterGame.Name = "btnEnterGame";
+            this.btnEnterGame.Size = new System.Drawing.Size(339, 65);
+            this.btnEnterGame.TabIndex = 4;
+            this.btnEnterGame.Text = "Play";
+            this.btnEnterGame.UseVisualStyleBackColor = true;
+            this.btnEnterGame.Click += new System.EventHandler(this.btnEnterGame_Click);
+            // 
+            // lblInstructions
+            // 
+            this.lblInstructions.AutoSize = true;
+            this.lblInstructions.BackColor = System.Drawing.Color.Transparent;
+            this.lblInstructions.Location = new System.Drawing.Point(159, 298);
+            this.lblInstructions.Name = "lblInstructions";
+            this.lblInstructions.Size = new System.Drawing.Size(633, 120);
+            this.lblInstructions.TabIndex = 5;
+            this.lblInstructions.Text = resources.GetString("lblInstructions.Text");
+            // 
+            // btnReady
+            // 
+            this.btnReady.Location = new System.Drawing.Point(555, 247);
+            this.btnReady.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReady.Name = "btnReady";
+            this.btnReady.Size = new System.Drawing.Size(99, 38);
+            this.btnReady.TabIndex = 8;
+            this.btnReady.Text = "Ready";
+            this.btnReady.UseVisualStyleBackColor = true;
+            this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
+            // 
+            // txtMoney
+            // 
+            this.txtMoney.Location = new System.Drawing.Point(555, 202);
+            this.txtMoney.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMoney.Name = "txtMoney";
+            this.txtMoney.Size = new System.Drawing.Size(140, 26);
+            this.txtMoney.TabIndex = 7;
+            // 
+            // lblEnterMoney
+            // 
+            this.lblEnterMoney.AutoSize = true;
+            this.lblEnterMoney.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnterMoney.Location = new System.Drawing.Point(267, 202);
+            this.lblEnterMoney.Name = "lblEnterMoney";
+            this.lblEnterMoney.Size = new System.Drawing.Size(276, 25);
+            this.lblEnterMoney.TabIndex = 6;
+            this.lblEnterMoney.Text = "Please enter your starting money:";
+            // 
+            // frmGameEntry
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::SlotMachine.Properties.Resources.formentrybg;
+            this.ClientSize = new System.Drawing.Size(936, 624);
+            this.Controls.Add(this.btnReady);
+            this.Controls.Add(this.txtMoney);
+            this.Controls.Add(this.lblEnterMoney);
+            this.Controls.Add(this.lblInstructions);
+            this.Controls.Add(this.btnEnterGame);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblWelcome);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmGameEntry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Welcome to Slots";
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

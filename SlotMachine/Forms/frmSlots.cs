@@ -63,7 +63,7 @@ namespace SlotMachine.Forms
 				//execute our btnPayout click event
 				btnPayout_Click(sender, e);
 			}
-			GlobalData.internalfrm.ResetCoin();
+			GlobalData.internalfrm.ResetBet();
 		}
 
         // Cycles the reels over a defned time interval. Refreshses picture boxes on form using result of spin.
@@ -102,7 +102,7 @@ namespace SlotMachine.Forms
 				if (betCounter <= 3)
 				{
 					txtBet.Text = betCounter.ToString();
-					GlobalData.internalfrm.AddCoin(1);
+					GlobalData.internalfrm.AddBet(1);
 				}
 				else if (betCounter > 3)
 				{
@@ -136,7 +136,7 @@ namespace SlotMachine.Forms
 			}
 			else
 			{
-				GlobalData.internalfrm.AddCoin(3);
+				GlobalData.internalfrm.AddBet(3);
 				txtBet.Text = betCounter.ToString();
 				btnPlaceBet.Enabled = false;
 				btnMaxBet.Enabled = false;

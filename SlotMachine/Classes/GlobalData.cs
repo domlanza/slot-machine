@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿/* Temple University / CIS 3309 / Slot Machine
+ * Class: InternalSlots 
+ * Authors: Zachary Goncalves & Michael Rodriguez
+ */
+
 using SlotMachine.Classes;
 
 namespace SlotMachine
 {
 	public class GlobalData
 	{
+        // Instantiates objects used globally by all forms. 
 		public static RNGen RNG = new RNGen();
 		public static InternalSlots internalfrm = new InternalSlots();
 		public static Player player = new Player();

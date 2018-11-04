@@ -17,7 +17,8 @@ namespace SlotMachine.Forms
         private int betCounter = 0;
         private int winnings = 0;
         private int score = GlobalData.player.getBalance();
-		SoundPlayer jackpot = new SoundPlayer(Properties.Resources.Jackpot);
+		SoundPlayer win = new SoundPlayer(Properties.Resources.Jackpot);
+		SoundPlayer jackpot = new SoundPlayer(Properties.Resources.theme);
 
         public frmSlots()
         {
@@ -27,20 +28,26 @@ namespace SlotMachine.Forms
 
 		private void btnSpin_Click(object sender, EventArgs e)
         {
+			jackpot.Stop();
             cycleReels();
-			jackpot.Play();
 			winnings = GlobalData.internalfrm.getReelResult();
-            if(winnings == 0)
-            {
-                score -=  betCounter;
-                txtBalance.Text = score.ToString();
-            }
-            else
-            {
-				
+			if (winnings == 0)
+			{
+				score -= betCounter;
+				txtBalance.Text = score.ToString();
+			}
+			else if (winnings == 600)
+			{
+				jackpot.Play();
 				score += winnings;
-                txtBalance.Text = score.ToString();
-            }
+				txtBalance.Text = score.ToString();
+			}
+			else
+			{
+				win.Play();
+				score += winnings;
+				txtBalance.Text = score.ToString();
+			}
 
             txtWinnings.Text = winnings.ToString();
             txtBet.Text = "";

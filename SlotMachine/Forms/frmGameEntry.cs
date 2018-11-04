@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace SlotMachine.Forms
 {
+	//visual medium allowing user to provide a name and starting balance to be saved as a player object
     public partial class frmGameEntry : Form
     {
 		SoundPlayer bgMusic = new System.Media.SoundPlayer(Properties.Resources.theme);

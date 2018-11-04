@@ -7,9 +7,9 @@ using System;
 
 namespace SlotMachine.Classes
 {
+	//class used to generate random numbers
     public class RNGen
     {
-        private int[] pictureNum = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		private int[] valueNum = new int[] { 0, 1, 2, 3, 4 };
         private int result;
         private Random gen;

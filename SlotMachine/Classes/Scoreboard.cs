@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace SlotMachine.Classes
 {
+	//scoreboard class; creates and maintains a text file containing a list of the top 10 players names and scores
     public class Scoreboard
     {
         // Create a list of tuples

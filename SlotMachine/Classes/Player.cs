@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SlotMachine.Classes
 {
+	//class used to save an individuals score, balance and name
     public class Player
     {
         private string playerName;

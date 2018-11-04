@@ -7,9 +7,9 @@ using SlotMachine.Classes;
 
 namespace SlotMachine
 {
+	// Instantiates objects used globally by all forms. 
 	public class GlobalData
 	{
-        // Instantiates objects used globally by all forms. 
 		public static RNGen RNG = new RNGen();
 		public static InternalSlots internalfrm = new InternalSlots();
 		public static Player player = new Player();

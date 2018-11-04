@@ -10,6 +10,7 @@ using System.Media;
 
 namespace SlotMachine.Forms
 {
+	//form that gives user access to the internalfrm through a visual medium
     public partial class frmSlots : Form
     {
         private int betCounter = 0;

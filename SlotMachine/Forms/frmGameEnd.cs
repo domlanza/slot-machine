@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace SlotMachine.Forms
 {
+	//closing form used to either replay or quit the application
     public partial class frmGameEnd : Form
     {
         public frmGameEnd()

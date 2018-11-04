@@ -5,6 +5,7 @@
 
 namespace SlotMachine.Classes
 {
+	//internal game that determines user winnings based on integers provided by RNGen and the amount bet
     public class InternalSlots
     {
         //our slot machine quantity counter

@@ -1,13 +1,9 @@
 ﻿/* Temple University / CIS 3309 / Slot Machine
  * Class: RNGen 
- * Author: Zachary Goncalves
+ * Authors: Zachary Goncalves & Michael Rodriguez
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SlotMachine.Classes
 {
@@ -17,16 +13,15 @@ namespace SlotMachine.Classes
 		private int[] valueNum = new int[] { 0, 1, 2, 3, 4 };
         private int result;
         private Random gen;
-
+        
+        // Default constructor that instantiates a new Random Number Generator.  
+        // Author: Zachary Goncalves
         public RNGen()
         {
             gen = new Random();
         }
-
-        public int pickRandomImage()
-        {
-            return result = gen.Next(0, pictureNum.Length);        
-        }
+        // Selects random number from array valueNum
+        // Author: Michael Rodriguez
 		public int pickRandomValue()
 		{
 			return result = gen.Next(0, valueNum.Length);

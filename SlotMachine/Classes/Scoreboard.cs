@@ -1,5 +1,5 @@
 ﻿/* Temple University / CIS 3309 / Slot Machine
- * Form: frmSlots 
+ * Class: Scoreboard 
  * Author: Zachary Goncalves & Michael Rodriguez
  */
 using System;

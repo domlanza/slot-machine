@@ -85,7 +85,7 @@ namespace SlotMachine.Classes
             scoreboardList.Add(gameTuple);
             readFile();
 
-            scoreboardList = scoreboardList.OrderBy(y => y.Item2).ToList();
+            scoreboardList = scoreboardList.OrderByDescending(y => y.Item2).ToList();
 
 			if (scoreboardList.Count >= 11)
             {

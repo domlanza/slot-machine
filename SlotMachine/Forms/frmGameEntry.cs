@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/* Temple University / CIS 3309 / Slot Machine
+ * Form: frmSlots 
+ * Authors: Zachary Goncalves & Michael Rodriguez
+ */
+using System;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Media;
 using System.Windows.Forms;
-using SlotMachine.Classes; 
 
 namespace SlotMachine.Forms
 {
@@ -23,7 +20,8 @@ namespace SlotMachine.Forms
         {
             InitializeComponent();
         }
-
+        // Validates user inputted data and enables play button.
+        // Author: Zachary Goncalves
         private void btnReady_Click(object sender, EventArgs e)
         {
             try
@@ -57,6 +55,9 @@ namespace SlotMachine.Forms
 
             btnEnterGame.Enabled = true;
         }
+
+        // Instantiates and opens game form. Updates player object with user inputted balance and name.
+        // Author: Zachary Goncalves
         private void btnEnterGame_Click(object sender, EventArgs e)
         {
 			GlobalData.player.setPlayer(txtName.Text, Int32.Parse(txtMoney.Text));

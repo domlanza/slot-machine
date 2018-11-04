@@ -1,6 +1,6 @@
 ﻿/* Temple University / CIS 3309 / Slot Machine
  * Form: frmSlots 
- * Author: Zachary Goncalves & Michael Rodriguez
+ * Authors: Zachary Goncalves & Michael Rodriguez
  */
 using System;
 using System.Diagnostics;

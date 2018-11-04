@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿/* Temple University / CIS 3309 / Slot Machine
+ * Form: frmSlots 
+ * Author: Zachary Goncalves & Michael Rodriguez
+ */
+using System;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
@@ -25,7 +23,9 @@ namespace SlotMachine.Forms
             InitializeComponent();
         }
 
-
+        // Calls cycle reels method, get returns, and plays audio depending on conditions.
+        // Resets form after spin and checks if player has lost.
+        // Authors: Zachary Goncalves & Michael Rodriguez
 		private void btnSpin_Click(object sender, EventArgs e)
         {
 			jackpot.Stop();
@@ -66,6 +66,8 @@ namespace SlotMachine.Forms
 			GlobalData.internalfrm.ResetCoin();
 		}
 
+        // Cycles the reels over a defned time interval. Refreshses picture boxes on form using result of spin.
+        // Authors: Zachary Goncalves
         public void cycleReels()
         {
             Stopwatch timer = new Stopwatch();
@@ -73,9 +75,6 @@ namespace SlotMachine.Forms
             while (timer.Elapsed < TimeSpan.FromSeconds(3.6))
             {
                 GlobalData.internalfrm.spinReel();
-                test1.Text = GlobalData.internalfrm.getSpinOne().ToString();
-                test2.Text = GlobalData.internalfrm.getSpinTwo().ToString();
-                test3.Text = GlobalData.internalfrm.getSpinThree().ToString();
 
 				pbReel1.Image = slotImages.Images[GlobalData.internalfrm.getSpinOne()];
 				pbReel1.Refresh();
@@ -88,6 +87,8 @@ namespace SlotMachine.Forms
             timer.Stop();
         }
 
+        // Increments betCounter and validates user has the money to bet. 
+        // Author: Michael Rodriguez 
         private void btnAddCoin_Click(object sender, EventArgs e)
         {
 			betCounter += 1;
@@ -123,6 +124,8 @@ namespace SlotMachine.Forms
 
         }
 
+        // Adds maximum bet amount. 
+        // Author: Michael Rodriguez
         private void btnMaxCoins_Click(object sender, EventArgs e)
         {
 			betCounter = 3;
@@ -141,6 +144,9 @@ namespace SlotMachine.Forms
 			}
         }
 
+        // Instantiates game ending form and updates player object with values from game.
+        // Allows the user to quit or continue playing.
+        // Author: Zachary Goncalves
         private void btnPayout_Click(object sender, EventArgs e)
         {
             GlobalData.player.setScore(score);
@@ -160,7 +166,9 @@ namespace SlotMachine.Forms
             }
         }
 
-		private void frmSlots_Load(object sender, EventArgs e)
+        // Updates Score textbox with user-inputted balance on form load.
+        // Author: Michael Rodriguez
+ 		private void frmSlots_Load(object sender, EventArgs e)
 		{
 			txtBalance.Text = score.ToString();
 		}

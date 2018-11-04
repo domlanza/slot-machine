@@ -93,9 +93,8 @@ namespace SlotMachine.Classes
             readFile();
 
             scoreboardList = scoreboardList.OrderByDescending(y => y.Item2).ToList();
-
-			if (scoreboardList.Count == 11)
-            {       
+			while(scoreboardList.Count >= 11)
+            {
                     scoreboardList.RemoveAt(10);  
             }
             writeFile();

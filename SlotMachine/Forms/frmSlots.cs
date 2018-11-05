@@ -173,5 +173,11 @@ namespace SlotMachine.Forms
 		{
 			txtBalance.Text = score.ToString();
 		}
+
+		private void btnScores_Click(object sender, EventArgs e)
+		{
+			frmWinningCombinations frmWinCombo = new frmWinningCombinations();
+			frmWinCombo.Show();
+		}
 	}
 }

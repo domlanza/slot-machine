@@ -69,6 +69,12 @@
     <Compile Include="Forms\frmSlots.Designer.cs">
       <DependentUpon>frmSlots.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmWinningCombinations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWinningCombinations.Designer.cs">
+      <DependentUpon>frmWinningCombinations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frmGameEnd.resx">
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSlots.resx">
       <DependentUpon>frmSlots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWinningCombinations.resx">
+      <DependentUpon>frmWinningCombinations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,6 +113,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Winning Combinations.png" />
     <None Include="icon_AyJ_icon.ico" />
     <Content Include="Images\blue-t.png" />
     <Content Include="Images\drawn-owl.png" />

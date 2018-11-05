@@ -167,5 +167,15 @@ namespace SlotMachine.Properties {
                 return ResourceManager.GetStream("theme", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Winning_Combinations {
+            get {
+                object obj = ResourceManager.GetObject("Winning Combinations", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -113,6 +113,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\formentrybgnewaspect.png" />
     <Content Include="Resources\Winning Combinations.png" />
     <None Include="icon_AyJ_icon.ico" />
     <Content Include="Images\blue-t.png" />

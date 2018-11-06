@@ -38,7 +38,7 @@
 			this.pictureBox1.BackgroundImage = global::SlotMachine.Properties.Resources.Winning_Combinations;
 			this.pictureBox1.Location = new System.Drawing.Point(3, 3);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(503, 375);
+			this.pictureBox1.Size = new System.Drawing.Size(503, 385);
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
 			// 

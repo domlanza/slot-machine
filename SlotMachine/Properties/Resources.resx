@@ -121,8 +121,8 @@
   <data name="green_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\green-t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="red_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\red-t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Jackpot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jackpot.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="formbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\formbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,8 +130,11 @@
   <data name="frmgameend" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmgameend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Jackpot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Jackpot.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="red_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\red-t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Winning Combinations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Winning Combinations.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="formentrybg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\formentrybg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,7 +154,7 @@
   <data name="blue_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\blue-t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Winning Combinations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Winning Combinations.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="formentrybgnewaspect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\formentrybgnewaspect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -103,6 +103,16 @@ namespace SlotMachine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap formentrybgnewaspect {
+            get {
+                object obj = ResourceManager.GetObject("formentrybgnewaspect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap frmgameend {
             get {
                 object obj = ResourceManager.GetObject("frmgameend", resourceCulture);
